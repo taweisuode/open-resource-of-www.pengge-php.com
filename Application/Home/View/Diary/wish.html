@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+	#body1
+	{	
+		width:600px; margin:0 auto;
+		height:1000px;
+		font-size: 12px;
+		text-align: center;
+		background-color: #F0FAFF;
+		border: 2px solid #CC99FF;
+	}
+	.top
+	{
+		height:20px;
+		text-align:center;
+		background:pink;
+	}
+	.bar{
+		  color: #340277;
+		font-size: 15px;
+		font-weight: bold;
+		height: 30px;
+		line-height: 30px;
+		width: 600px;
+	}
+	.con1{
+		height:200px;
+		width:100%;
+		text-align:left;
+	}
+
+	.left{
+		margin-left:20px;
+		text-align:left;
+		float:left;
+		width:300px;
+	
+	}
+	.zhitiao-color
+	{
+		height: 35px;
+		overflow: hidden;
+		padding-top: 10px;
+		text-align: left;
+	}
+	.zhitiao-image
+	{
+		height: 92px;
+		overflow: hidden;
+		padding-bottom: 0;
+		padding-top: 20px;
+		text-align: left;
+	}
+	.img1{
+		cursor:pointer;
+		background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+		border: 1px solid #F0FAFF;
+	}
+	.img2
+	{
+		cursor:pointer;
+		background: none repeat scroll 0 0 #FFFFFF;
+		border: 1px solid #FB986C;
+	}
+	.zhitiao-content
+	{
+		line-height: 30px;
+		padding-top: 20px;
+		width: 500px;
+	}
+	.yourname
+	{
+	    padding-top: 20px;
+		width: 500px;
+	}
+	.verify
+	{
+		padding-top: 20px;
+		width: 500px;		
+	}
+	.right{
+		float:right;
+		text-align:center;
+		width:30%;
+		float: left;
+		padding-top: 20px;
+	}
+	.zhitiao-xiaoguo1
+	{
+		background: none repeat scroll 0 0 #FEBEBF;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 200px;
+	}
+	.zhitiao-xiaoguo2
+	{
+		background: none repeat scroll 0 0 #E8DEFF;;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 200px;
+	}
+	.zhitiao-xiaoguo3
+	{
+		background: none repeat scroll 0 0 #E1FFDE;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 200px;
+	}
+	.zhitiao-xiaoguo4
+	{
+		background: none repeat scroll 0 0 #D6E6FE;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 200px;
+	}
+
+</style>
+ <script>
+	function zhitiaocolor1()
+	{
+		//alert(123);
+		document.getElementById("change").className="zhitiao-xiaoguo2"; 
+		document.getElementById("color_info").value="2";
+	} 
+	function zhitiaocolor2()
+	{
+		//alert(123);
+		document.getElementById("change").className="zhitiao-xiaoguo3";
+		document.getElementById("color_info").value="3";		
+	}
+	function zhitiaocolor3()
+	{
+		//alert(123);
+		document.getElementById("change").className="zhitiao-xiaoguo4";
+		document.getElementById("color_info").value="4";
+	}
+	function sub()
+		{
+			var color=document.getElementById("change").className;
+			var tuan=document.getElementById("abcd").src;
+			var color_info = document.getElementById("color_info").value;
+			var tuan_info=document.getElementById("tuan_info").value;
+			//alert(tuan);
+			//alert(color);
+			if(color=="zhitiao-xiaoguo2")
+			{
+				tuan_info=1;
+			}
+			else if(color=="zhitiao-xiaoguo3")
+			{
+				color_info=2;
+			}
+			else if(color=="zhitiao-xiaoguo4")
+			{
+				color_info=3;
+			}
+			if(tuan== "__PUBLIC__/images/index/wishwall/tuan1.jpg")
+			{
+				tuan_info=1;
+			}
+			else if(tuan=="__PUBLIC__/images/index/wishwall/tuan2.jpg")
+			{
+				tuan_info=2;
+			}else if(tuan== "__PUBLIC__/images/index/wishwall/tuan3.jpg")
+			{
+				tuan_info=3;
+			}
+			if(document.getElementById("name1").value == '' ||document.getElementById("text").value == '')
+			{
+				alert("请许愿并留下您的大名☺");
+				return  false;
+			}
+			document.reg_form.submit();
+		}
+
+	function getBPic(i)
+		{
+			 var i=(i<2||i>3)?1:i;
+			//alert(123);
+			
+			var a =" __PUBLIC__/images/index/wishwall/tuan"+i+".jpg";
+			document.getElementById("abcd").src= a;
+			//alert(i);
+			document.getElementById("tuan_info").value=i;
+		}
+	function abc()
+	{
+		//alert(123);
+		var abc=document.getElementById("text").value;
+		//
+		//alert(abc);
+		if(abc == "" || abc=="写下你的祝福")
+		{
+			abc="";
+		}
+		//alert($abc);
+		document.getElementById("text").value = abc;
+	}
+	function aaa()
+	{
+		//alert(123);
+		var aaa=document.getElementById("text").value;
+		//alert(aaa);
+		//txt = document.getElementById('con').value; //获取textarea的值
+		//document.write (txt);
+		document.getElementById("show_1").innerHTML=aaa;
+		//alert(aaa);
+	
+	}
+	function bbb()
+	{
+		var bbb=document.getElementById("name1").value;
+		document.getElementById("name2").innerHTML=bbb;
+	
+	}
+</script>
+<title>点点滴滴--许愿墙</title>
+<include file="Public:header"/>
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+			
+			<!-- BEGIN REVIEW ARCHIVE -->
+    <div id="body1">
+	<div class="top">我要贴祝福纸条
+	</div>
+	<form  action="__APP__/Home/Diary/wishwall" method="post" name="reg_form">
+	<input type="hidden" name="time" value='<?php echo date("Y-m-d H:i:s");?>' >
+	<input name='color' type='hidden' id='color_info' value='1' />
+	<input name='tuan' type='hidden' id='tuan_info' value='1' />
+	<div class="left">
+		<div class="zhitiao-color">请选择纸条颜色：<img  class="img1" onmouseover="this.className='img2'" onmouseout="this.className='img1'" onclick="zhitiaocolor1()"  src="__PUBLIC__/images/index/wishwall/zhitiao1.jpg" style="padding: 3px;" /><img class="img1" onmouseover="this.className='img2'" onmouseout="this.className='img1'" onclick="zhitiaocolor2()" src="__PUBLIC__/images/index/wishwall/zhitiao2.jpg" style="padding: 3px;"/><img class="img1" onmouseover="this.className='img2'" onmouseout="this.className='img1'" onclick="zhitiaocolor3()" src="__PUBLIC__/images/index/wishwall/zhitiao3.jpg" style="padding: 3px;"/></div>
+		<div class="zhitiao-image">请选择纸条图案：<img class="img1" onmouseover="this.className='img2'" onmouseout="this.className='img1'" onclick="getBPic(1)" src="__PUBLIC__/images/index/wishwall/tuan1.jpg" style="padding: 3px;"/><img class="img1" onmouseover="this.className='img2'" onmouseout="this.className='img1'" onclick="getBPic(2)" src="__PUBLIC__/images/index/wishwall/tuan2.jpg" style="padding: 3px;"/><img class="img1" onmouseover="this.className='img2'" onmouseout="this.className='img1'" onclick="getBPic(3)" src="__PUBLIC__/images/index/wishwall/tuan3.jpg" style="padding: 3px;"/></div>
+		<div class="zhitiao-content">输入你的祝福纸条内容</div>
+		<div><textarea  id="text" name="test" cols="30" rows="4" onfocus='abc(this)' onkeyup="aaa()">写下你的祝福</textarea></div>
+		<div class="yourname">您的署名：<input type="text" value="" id="name1" name="name" onkeyup="bbb()"></div>
+		<div class="verify">验 证 码：<input type="text" value="" name="verify" id="verify" ><img id='verifyImg' src="{:U('Home/Diary/verify_c',array())}" onclick='this.src=this.src+"?"+Math.random()' style="cursor:pointer; padding-left: 11px;"/></div>
+		<div><img src="__PUBLIC__/images/index/wishwall/tiaojiao.jpg" style="margin-top: 27px; cursor: pointer; margin-left: 191px;" onclick="sub()"/></div>
+	</div>
+	
+	</form>
+	<div class="right">
+		<div>纸条效果预览： </div>
+		<div class="zhitiao-xiaoguo1" id="change" style="width: 228px;">
+			<div><pre>第x条         <?php echo date("Y-m-d H:i:s"); ?></pre></div>
+
+			<div id="show_1" style="height:212px;" ></div>
+			<div style="height: 40px;"><img src=" __PUBLIC__/images/index/wishwall/tuan1.jpg" id="abcd"/></div>
+			<div style="text-align:right" id="name2">      你的署名</div>
+		</div>
+	</div>
+	</div>
+			
+		</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+	<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/notbusylist">Diary</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/wish">wish</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+	
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+	.background
+	{
+		background-image:url("__PUBLIC__/images/index/wishwall/1.jpg");
+	}
+	.content
+	{
+		overflow:hidden;
+		margin: 0 auto;
+		width:598px;
+		margin-left: 10px;
+	}
+	.content_1
+	{
+		float: left;
+		padding: 0 5px;
+		width: 598px;
+	}
+	.wish
+	{
+		float: left;
+		margin: 0 0 10px 10px;
+		width: 174px;
+	}
+	.zhitiao-xiaoguo1
+	{
+		background: none repeat scroll 0 0 #FEBEBF;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 170px;
+		height: 190px;
+	}
+	.zhitiao-xiaoguo2
+	{
+		background: none repeat scroll 0 0 #E8DEFF;;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 170px;
+		height: 190px;
+	}
+	.zhitiao-xiaoguo3
+	{
+		background: none repeat scroll 0 0 #E1FFDE;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 170px;
+		height: 190px;
+	}
+	.zhitiao-xiaoguo4
+	{
+		background: none repeat scroll 0 0 #D6E6FE;
+		border: 1px solid #BAA7D4;
+		font-size: 12px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: left;
+		width: 170px;
+		height: 190px;
+	}
+</style>
+ 
+<title>点点滴滴--许愿墙</title>
+<include file="Public:header"/>
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+			
+			<!-- BEGIN REVIEW ARCHIVE -->
+			<div id="review-archive">
+			
+				<h3 class="section-title">许愿墙</h3>
+				<div class="background" >
+					<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
+						  <tr>
+							<td style="padding-top: 333px; width: 400px;">
+							<table cellspacing="0" cellpadding="0" border="0">
+									<form action="__APP__/Home/Diary/search" name="form1" method="post">
+										  <tr>
+											<td><strong>愿望搜索：</strong>
+											
+											  <input id="byNo"  type="radio" <if condition ="$flag eq '0'">checked="checked"</if> value="0" name="searchType" />
+											  <label for="byNo">按编号</label>
+												<input id="byDate"  type="radio" value="1" name="searchType" <if condition ="$flag eq '1'">checked="checked"</if>/>
+											  <label for="byDate">按日期（比如：2010-01-01）</label>
+											<br /></td>
+											
+										  </tr>
+										  <tr>
+											<td height="39" style="background:url(images/ss.gif) center left no-repeat; padding-left:75px;"><input  name="id1" style="width:196px; height:20px;" value="<?php echo $_POST['id1'];?>"/>
+											<img src="__PUBLIC__/images/index/wishwall/search.jpg" onclick="javascript:document.form1.submit();"   align="absmiddle"  style="cursor:pointer;"/></td>
+										  </tr>
+									</form>
+							  </table>		  
+							</td>
+						<td width="209" style="padding-right: 200px; padding-top: 333px;"><a href="__APP__/Home/Diary/wish"><img src="__PUBLIC__/images/index/wishwall/xuyuan.jpg" width="70" height="25" border="0" /></a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!-- END REVIEW ARCHIVE -->
+			<div class="content">
+
+				<div class="content_1">
+
+					<volist name="data" id="vo">
+
+					<div class="wish">
+							<div class="zhitiao-xiaoguo{$vo.color}" id="change">
+							<div><pre>第{$vo.id}条         {$vo.time}</pre></div>
+
+							<div style="height:120px;width:170px;">{$vo.content}</div>
+							<div><img src=" __PUBLIC__/images/index/wishwall/tuan{$vo.tuan}.jpg" id="abcd"/></div>
+							<div style="text-align:right">            {$vo.name}</div>
+						</div>
+					</div>
+				</volist>
+				</div>
+			</div>
+			<!-- BEGIN PAGINATION -->
+			<div id="pagination">
+				{$page}
+			</div>
+			<!-- END PAGINATION -->
+			
+		</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+	<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/notbusylist">Diary</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/wishwall">wishwall</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+	
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+ 
+<title>我的音乐</title>
+	<!-- BEGIN HEADER -->
+<link rel="stylesheet" href="__PUBLIC__/css/index/index.css" />
+<style>	
+	.post-entry ul li {
+	 clear:both;
+	}
+</style>
+<include file="Public:header"/>
+	<!-- END HEADER -->
+	
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+		
+			<!-- BEGIN POST -->
+			<div id="post">
+			
+				<h3 class="section-title">我的音乐</h3>
+				<img src="__PUBLIC__/images/index/manage/music1.gif"  style="margin-top: -65px;"/>
+				<div class="post-entry" width="500px">
+  <div class="newBox Mbox"  style="margin-bottom: 6px;">
+    <div class="Mbox-hd clearfix" style="top: -4px;">
+	
+      <h2 class="Mbox-tit">新歌推荐</h2>
+      <ul class="clickTab-hd">
+        <li class="current">新歌推荐</li>
+        <li>合作推荐</li>
+      </ul>
+      <p class="upDate">2014年10月28日更新</p>
+      <div class="Mbox-btn"><a href="javascript:void(0);" class="Mbox-play newBoxPlay1" onclick="playall();" title="顺序播放">顺序播放</a><!-- <a href="javascript:{};" class="Mbox-add" title="全部加入播放列表"></a> --></div>
+    </div>
+    <div class="Mbox-bd clearfix">
+      <div class="clickTab-bd">
+        <div class="newBoxItem" style="display:block;" id="f1">
+          <ul class="musicList music2_L">
+		  <volist id="vo" name="data" offset="0" length="3" key="k">
+		  <li class="top3"><input style='display:none;' type=checkbox name=Url value='653166@'>
+			  <span class="num">{$k}</span>
+			  <span class="singerNameWrap">
+				<a href="javascript:void(0)" onclick="play({$vo.id})" class="songName">{$vo.music_name}</a>
+			  </span>
+			  <a href="javascript:void(0)" onclick="play({$vo.id})" class="singerName">{$vo.music_author}</a>
+		  </li>
+		  </volist>
+		 <volist id="vo" name="data" offset="3" length="7" key="k">
+		  <li>
+			  <input style='display:none;' type=checkbox name=Url value='652557@'>
+			  <span class="num">{$k+3}</span>
+			  <span class="singerNameWrap">
+			  <input type="hidden" id="music_id" value="{$vo.id}">
+				<a href="javascript:void(0)" onclick="play({$vo.id})" class="songName">{$vo.music_name}</a>
+			  </span>
+			  <a href="javascript:void(0)" onclick="play({$vo.id})" class="singerName">{$vo.music_author}</a>
+		  </li>
+		  </volist>
+		  </ul>
+		  <!-- <li><input style='display:none;' type=checkbox name=Url value='652775@'><span class="num">05</span><span class="singerNameWrap"><a href="/play/652775.htm" class="songName" target="_1">数到三就忘记</a></span><a href="/geshou/42446.htm" target="_blank" class="singerName">唐古</a><span class="itemCao"><a href="javascript:{};" onclick="javascript:Addplay('652775')" class="itemAdd" title="加入列表"></a></span></li><li><input style='display:none;' type=checkbox name=Url value='652259@'><span class="num">06</span><span class="singerNameWrap"><a href="/play/652259.htm" class="songName" target="_1">未知的旅程</a></span><a href="/geshou/43682.htm" target="_blank" class="singerName">hope组合</a><span class="itemCao"><a href="javascript:{};" onclick="javascript:Addplay('652259')" class="itemAdd" title="加入列表"></a></span></li><li><input style='display:none;' type=checkbox name=Url value='652575@'><span class="num">07</span><span class="singerNameWrap"><a href="/play/652575.htm" class="songName" target="_1">慢慢慢慢</a></span><a href="/geshou/41122.htm" target="_blank" class="singerName">赵露</a><span class="itemCao"><a href="javascript:{};" onclick="javascript:Addplay('652575')" class="itemAdd" title="加入列表"></a></span></li><li><input style='display:none;' type=checkbox name=Url value='652546@'><span class="num">08</span><span class="singerNameWrap"><a href="/play/652546.htm" class="songName" target="_1">想着你的好</a></span><a href="/geshou/40852.htm" target="_blank" class="singerName">刘恺名</a><span class="itemCao"><a href="javascript:{};" onclick="javascript:Addplay('652546')" class="itemAdd" title="加入列表"></a></span></li><li><input style='display:none;' type=checkbox name=Url value='652764@'><span class="num">09</span><span class="singerNameWrap"><a href="/play/652764.htm" class="songName" target="_1">星星火把</a></span><a href="/geshou/3181.htm" target="_blank" class="singerName">阿鲁阿卓</a><span class="itemCao"><a href="javascript:{};" onclick="javascript:Addplay('652764')" class="itemAdd" title="加入列表"></a></span></li><li><input style='display:none;' type=checkbox name=Url value='651656@'><span class="num">10</span><span class="singerNameWrap"><a href="/play/651656.htm" class="songName" target="_1">如果心酸</a><a href="/yinyuetai/6/57312.htm" class="mvIcon" target="_blank"></a></span><a href="/geshou/2178.htm" target="_blank" class="singerName">香香</a><span class="itemCao"><a href="javascript:{};" onclick="javascript:Addplay('651656')" class="itemAdd" title="加入列表"></a></span></li></ul>
+		   -->
+		   <ul class="musicList music2_R">
+		   <volist id="vo" name="data" offset="10" length="10" key="k">
+		   <li>
+				<input style='display:none;' type=checkbox name=Url value='652586@'>
+				<span class="num">{$k+10}</span>
+				<span class="singerNameWrap">
+				<a href="javascript:void(0)" onclick="play({$vo.id})" class="songName">{$vo.music_name}</a>
+			  </span>
+			  <a href="javascript:void(0)" onclick="play({$vo.id})" class="singerName">{$vo.music_author}</a>
+		   </li>
+		   </volist>
+		   </ul>
+		   </div>
+      </div>
+    </div>
+  </div>
+			<audio id="audio_play" controls ="controls"  src="__PUBLIC__/music/{$info.music_src}" style="margin-bottom: 12px;" ></audio> 	
+			<div id="song_info" style="width: 250px;float:right;font-size:14px;color:#006acd;margin-top: 3px;">{$info.music_name}--{$info.music_author}</div>
+				<img src="__PUBLIC__/images/index/manage/music2.jpg"/>	
+				</div>
+			
+			</div>
+			<!-- EMD POST -->
+			
+		</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+	<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Manage/music">Manage</a></li>
+				<li><span> // </span><a href="__APP__/Home/Manage/music">music</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+	<script>
+		function play(id)
+		{
+			//var audio_play = $("#audio_play");
+			var audio_play = document.getElementById("audio_play"); 
+			$.ajax({
+			 type: "GET",
+			 url: "__APP__/Home/Manage/playmusic",
+			 data: "id="+id,
+			 dataType: "json",
+			 success: function(data)
+			 {
+				//document.write(data);
+				//audio_play.src="__PUBLIC__music"+data['music_src'];
+				//alert(song_info);
+				audio_play.src= "__PUBLIC__/music/"+data['music_src'];
+				audio_play.play();
+				song_info = data['music_name']+"--"+data['music_author'];
+				$("#song_info").html(song_info);
+				//alert(song_info);
+			  }
+			});
+		}
+		function playall()
+		{
+				//alert("111");
+				var i=1;
+				var audio_play = document.getElementById("audio_play"); 
+				audio_play.loop='';
+/*				song_info = "想要陪你一起旅行--本兮";
+				audio_play.src="__PUBLIC__/music/1.mp3";
+				$("#song_info").html(song_info);
+				audio_play.play();*/
+				audio_play.addEventListener('ended', function () 
+				{
+					//alert("1111");
+					if(i<20)
+					{
+						//alert(i);
+						i++;
+						audio_play.src="__PUBLIC__/music/"+i+".mp3";
+						audio_play.loop='';
+						$.ajax({
+						 type: "GET",
+						 url: "__APP__/Home/Manage/playmusic",
+						 data: "id="+i,
+						 dataType: "json",
+						 success: function(data)
+						 {
+							//document.write(data);
+							//audio_play.src="__PUBLIC__music"+data['music_src'];
+							//alert(song_info);
+							//audio_play.src= "__PUBLIC__/music/"+data['music_src'];
+							//audio_play.play();
+							song_info = data['music_name']+"--"+data['music_author'];
+							$("#song_info").html(song_info);
+							audio_play.play();
+							//audio_play.addEventListener("ended",playall,false);
+							//alert(song_info);
+						  }
+						});
+						
+					}
+					else
+					{
+						//alert("xxx");
+						i = 1;
+						audio_play.src="__PUBLIC__/music/1.mp3";
+						audio_play.loop='';
+						$.ajax({
+						 type: "GET",
+						 url: "__APP__/Home/Manage/playmusic",
+						 data: "id=1",
+						 dataType: "json",
+						 success: function(data)
+						 {
+							//document.write(data);
+							//audio_play.src="__PUBLIC__music"+data['music_src'];
+							//alert(song_info);
+							//audio_play.src= "__PUBLIC__/music/"+data['music_src'];
+							//audio_play.play();
+							song_info = data['music_name']+"--"+data['music_author'];
+							$("#song_info").html(song_info);
+							audio_play.play();
+							//audio_play.addEventListener("ended",playall,false);
+							//alert(song_info);
+						  }
+						});
+						//i++;
+						
+					}
+					
+				},false);
+		}
+	</script>
+</html>

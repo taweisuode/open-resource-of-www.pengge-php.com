@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+ 
+<title>{$info.article_title}--点点滴滴--闲时的叙述</title>
+ <link rel="stylesheet" href="__PUBLIC__/css/index/smohan.face.css" />
+ <include file="Public:header"/>
+	<!-- END HEADER -->
+	
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+		
+			<!-- BEGIN POST -->
+			<div id="post">
+			
+				<p class="post-meta">Published on {$info.addtime}, by {$info.article_author}</p>
+				
+				<h1 class="post-header">{$info.article_title}</h1>
+				
+				<div class="line-top"></div>
+				
+				<div class="post-review">
+					
+					<img src="__PUBLIC__/images/index/notbusylist/sayinglogo.jpg" alt="" class="review-thumb" style="width:145px;height:204px;"/> 
+					
+					<div class="review-score">
+					
+						<div class="overall-score green">
+							<span class="the-score">{$info.score4}</span>
+							<span class="overall-text">总　　　　分</span>
+						</div>
+						<div class="other-score">
+							<div class="score-item">
+								<span class="score-label">有用度:</span>
+								<span class="score">{$info.score1}/10</span>
+								<div class="score-bg" style="background:url(__PUBLIC__/images/index/score-{$info.score1}.png) no-repeat;"></div>
+							</div>
+							<div class="score-item">
+								<span class="score-label">难度:</span>
+								<span class="score">{$info.score2}/10</span>
+								<div class="score-bg" style="background:url(__PUBLIC__/images/index/score-{$info.score2}.png) no-repeat;"></div>
+							</div>
+							<div class="score-item">
+								<span class="score-label">有趣度:</span>
+								<span class="score">{$info.score3}/10</span>
+								<div class="score-bg" style="background:url(__PUBLIC__/images/index/score-{$info.score3}.png) no-repeat;"></div>
+							</div>
+						</div>
+					
+					</div>
+					
+					<div class="pros"><p>Amazing graphics <span>|</span> Great story <span>|</span> Outstanding soundtrack </p></div>
+					<div class="cons"><p>Buggy multiplayer <span>|</span> Crashes occasional</p></div>
+
+				</div>
+				
+				<div class="line-bottom"></div>
+				
+				<div class="post-entry">
+					
+					<h2>{$info.small_title1}</h2>
+					<p><img src="__PUBLIC__/images/index/notbusylist/{$info.article_picurl}" alt="" class="alignright" style="width:200px;height:145px;"/>{$info.article_content1}</p>
+					<h2>{$info.small_title2}</h2>
+					<p><img src="__PUBLIC__/images/index/notbusylist/{$info.article_picurl}" alt="" class="alignleft" style="width:200px;height:145px;"/>{$info.article_content2}</p>		
+					
+				</div>
+				
+				<div class="post-share">
+					<ul>
+						<div class="bshare-custom"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-qzone">QQ空间</a><a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a><a title="分享到人人网" class="bshare-renren">人人网</a><a title="分享到腾讯微博" class="bshare-qqmb">腾讯微博</a><a title="分享到网易微博" class="bshare-neteasemb">网易微博</a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+							<span class="BSHARE_COUNT bshare-share-count">0</span></div>
+							<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+							<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+					</ul>
+				</div>
+			
+				<!-- BEGIN COMMENTS -->
+				<div id="comments">
+				
+					<h3><strong style="font-size:24px;">评论列表</strong></h3>
+					
+					<ol>
+					<volist name="comment" id="vo">
+						<li>
+						
+							<div class="comment">
+							
+								<div class="avatar">
+									<img src="__PUBLIC__/images/index/contactus/youke.jpg" alt=""/>
+								</div>
+								
+								<div class="comment-details">
+									<span class="author">{$vo.author}</span>
+									<span class="date">-{$vo.comment_time}</span>
+									
+									<p>{$vo.comment}</p>
+								
+								</div>
+								
+							</div>
+						</li>
+					</volist>
+					
+					</ol>
+					
+					<h3><strong style="font-size:24px;">留下你的评论吧</strong></h3>
+					
+					<form action="__APP__/Home/Diary/notbusy_comment?id={$info.id}" id="comment-form" method="post" onsubmit="return leave();">
+						
+						<p>
+							<input type="text" name="author" value="" onblur="author_blur()" onfocus="author_focus()" id='author'/>
+							<label>姓名 <span class="required" id='must_name' style=''>(必须*)</span></label>
+						</p>
+							
+							
+						<p>
+							<label>评价内容</label>
+							<!-- <textarea name="comment" cols="79" rows="10"></textarea> -->
+							<div id="Smohan_FaceBox">
+						   <textarea name="comment" id="Smohan_text" class="smohan_text" cols="79" rows="3" style="width: 500px;"></textarea>
+						   <p style="width:500px;">
+						   <a href="javascript:void(0)" class="face" title="表情" ></a>
+						   <!--<button class="button" id="Smohan_Showface">显示表情</button>-->
+						   </p>
+						</div>	
+						<div id="Zones"></div>
+						</p>
+
+						<p>
+							<input type="submit" value="提交" />
+						</p>
+						
+					</form>
+				
+				</div>
+		<script type="text/javascript">
+		$(function (){
+			$("a.face").smohanfacebox({
+				Event : "click",	//触发事件	
+				divid : "Smohan_FaceBox", //外层DIV ID
+				textid : "Smohan_text" //文本框 ID
+			});
+			//解析表情  $('#Zones').replaceface($('#Zones').html());
+		});
+		//Demo测试
+		$('#Smohan_Showface').click(function() {
+			 $('#Zones').fadeIn(360);
+			 $('#Zones').html($('#Smohan_text').val());
+			 $('#Zones').replaceface($('#Zones').html());//替换表情
+			});
+		var publicurl='__PUBLIC__';
+		//alert(publicurl);
+		</script>
+		</div>
+	</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/notbusylist">Diary</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/notbusyinfo?id={$info.id}">notbusyinfo</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+<script>
+	function author_blur()
+	{
+		//alert("333");
+		var author_content = document.getElementById('author').value;
+		//alert(author_content);
+		if(author_content == '')
+		{
+			document.getElementById('must_name').style.color='red';
+		}
+	}
+	function author_focus()
+	{
+		//alert("333");
+		var author_content = document.getElementById('author').value;
+		//alert(author_content);
+		if(author_content == '')
+		{
+			document.getElementById('must_name').style.color='';
+		}
+	}
+	function leave()
+	{
+		var author_content = document.getElementById('author').value;
+		if(author_content == "")
+		{
+			return false;
+		}else
+		{
+			return true;
+		}
+	}
+</script> 

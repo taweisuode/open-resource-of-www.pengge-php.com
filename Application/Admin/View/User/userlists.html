@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>111Dashboard - Ace Admin</title>
+		<meta name="description" content="overview & stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- basic styles -->
+		<link href="__PUBLIC__/css/admin/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="__PUBLIC__/css/admin/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!-- page specific plugin styles -->
+		
+		<!-- ace styles -->
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-skins.min.css" />
+		<!--[if lt IE 9]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-ie.min.css" />
+		<![endif]-->
+	</head>
+	<body>
+	
+    <include file="public:top"/>
+		<div class="container-fluid" id="main-container">
+			<a href="#" id="menu-toggler"><span></span></a><!-- menu toggler -->
+
+
+
+			<div id="sidebar">
+
+				
+
+				<div id="sidebar-shortcuts">
+
+					<div id="sidebar-shortcuts-large">
+
+						<button class="btn btn-small btn-success"><i class="icon-signal"></i></button>
+
+						<button class="btn btn-small btn-info"><i class="icon-pencil"></i></button>
+
+						<button class="btn btn-small btn-warning"><i class="icon-group"></i></button>
+
+						<button class="btn btn-small btn-danger"><i class="icon-cogs"></i></button>
+
+					</div>
+
+					<div id="sidebar-shortcuts-mini">
+
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+
+					</div>
+
+				</div><!-- #sidebar-shortcuts -->
+
+
+
+			<include file="public:left"/>
+
+
+
+
+
+			</div><!--/#sidebar-->
+
+
+
+		
+			<div id="main-content" class="clearfix">
+					
+
+					<div id="breadcrumbs">
+
+						<ul class="breadcrumb">
+
+							<li><i class="icon-home"></i> <a href="#">Home</a><span class="divider"><i class="icon-angle-right"></i></span></li>
+
+							<li class="active">Tables</li>
+						</ul><!--.breadcrumb-->
+
+
+
+						<div id="nav-search">
+
+							<form class="form-search">
+
+									<span class="input-icon">
+
+										<input autocomplete="off" id="nav-search-input" type="text" class="input-small search-query" placeholder="Search ..." />
+
+										<i id="nav-search-icon" class="icon-search"></i>
+
+									</span>
+
+							</form>
+
+						</div><!--#nav-search-->
+
+					</div><!--#breadcrumbs-->
+
+
+
+					<div id="page-content" class="clearfix">
+						
+						<div class="page-header position-relative">
+							<h1>查询条件 <small><i class="icon-double-angle-right"></i> Static & Dynamic Tables</small></h1>
+						</div><!--/page-header-->
+						
+						<div class="row-fluid">
+<!-- PAGE CONTENT BEGINS HERE -->
+<div class="row-fluid">
+	<div class="span12">
+		<table id="table_bug_report" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>用户名</th>
+					<th>公司法人</th>
+ 					<th>联系方式</th>
+					<th>所属行业</th>
+					<th>商户类型</th>
+					<th>商户名称</th>
+					<th>详细地址</th>
+					<th>注册时间</th>
+					<th>状态</th>
+					<th>审核时间</th>
+					<th class="hidden-480">审核人</th>
+					<th class="hidden-480">操作</th> 
+				</tr>
+			</thead>
+									
+			<tbody>
+			<volist name="data" id="vo" key='k'>
+				<tr>
+					<td>{$k+$offset}</td>
+					<td>{$vo.user_nc}</td>
+					<td>{$vo.license_person}</td>
+					<td>{$vo.user_tel}</br>{$vo.user_mobile}<br>{$vo.user_email}</td>
+					<td>{$vo.enterprise_industry}</td>
+					<td>{$vo.enterprise_type}</td>
+					<td>{$vo.license_name}</td>
+					<td>{$vo.user_address}</td>
+					<td>{$vo.user_regtime}</td>
+					<td><if condition="$vo.user_status eq 0"><span style="color:red;">未审核</span><else />已审核</if></td>
+					<td>{$vo.user_audittime}</td>
+					<td class="hidden-480">{$vo.user_auditperson}</td>
+					<td>
+						<div class="inline position-relative">
+							<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-only"></i></button>
+							<ul class="dropdown-menu dropdown-icon-only dropdown-light pull-right dropdown-caret dropdown-close">
+								<li><a href="__APP__/User/edit?user_id={$vo.user_id}" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
+								<li><a href="__APP__/User/detail?user_id={$vo.user_id}" class="tooltip-warning" data-rel="tooltip" title="detail" data-placement="left"><span class="blue"><i class="icon-flag"></i></span> </a></li>
+								<li><a href="__APP__/User/delete?user_id={$vo.user_id}" onclick="if(confirm('确定要删除记录吗?')){return true;}return false;" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left"><span class="red"><i class="icon-trash"></i></span> </a></li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</volist>
+				
+				
+		</tbody>
+		</table>
+	</div><!--/span-->
+	<style>
+	.pagelist{margin-left:500px;}
+	.pagelist a,.pagelist span
+	{
+		margin-left:9px;
+	}
+	</style>
+	<div class="pagelist">{$page}</div>
+</div><!--/row-->
+
+		<!-- basic scripts -->
+		<script src="1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		window.jQuery || document.write("<script src='__PUBLIC__/js/admin/js/jquery-1.9.1.min.js'>\x3C/script>");
+		</script>
+		
+		<script src="__PUBLIC__/js/admin/js/bootstrap.min.js"></script>
+		<!-- page specific plugin scripts -->
+		
+		<script type="text/javascript" src="__PUBLIC__/js/admin/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/admin/js/jquery.dataTables.bootstrap.js"></script>
+		<!-- ace scripts -->
+		<script src="__PUBLIC__/js/admin/js/ace-elements.min.js"></script>
+		<script src="__PUBLIC__/js/admin/js/ace.min.js"></script>
+		<!-- inline scripts related to this page -->
+		
+		<script type="text/javascript">
+		$(function() {
+	var oTable1 = $('#table_report').dataTable( {
+	"aoColumns": [
+      { "bSortable": false },
+      null, null,null, null, null,
+	  { "bSortable": false }
+	] } );
+	
+	
+	$('table th input:checkbox').on('click' , function(){
+		var that = this;
+		$(this).closest('table').find('tr > td:first-child input:checkbox')
+		.each(function(){
+			this.checked = that.checked;
+			$(this).closest('tr').toggleClass('selected');
+		});
+			
+	});
+	$('[data-rel=tooltip]').tooltip();
+})
+		</script>
+	</body>
+</html>

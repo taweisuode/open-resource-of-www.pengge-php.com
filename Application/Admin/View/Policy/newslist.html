@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>农汇网后台管理系统</title>
+		<meta name="description" content="overview & stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- basic styles -->
+		<link href="__PUBLIC__/css/admin/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="__PUBLIC__/css/admin/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!-- page specific plugin styles -->
+		
+		<!-- ace styles -->
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-skins.min.css" />
+		<!--[if lt IE 9]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-ie.min.css" />
+		<![endif]-->
+	</head>
+	<body>
+	
+    <include file="public:top"/>
+		<div class="container-fluid" id="main-container">
+			<a href="#" id="menu-toggler"><span></span></a><!-- menu toggler -->
+
+
+
+			<div id="sidebar">
+
+				
+
+				<div id="sidebar-shortcuts">
+
+					<div id="sidebar-shortcuts-large">
+
+						<button class="btn btn-small btn-success"><i class="icon-signal"></i></button>
+
+						<button class="btn btn-small btn-info"><i class="icon-pencil"></i></button>
+
+						<button class="btn btn-small btn-warning"><i class="icon-group"></i></button>
+
+						<button class="btn btn-small btn-danger"><i class="icon-cogs"></i></button>
+
+					</div>
+
+					<div id="sidebar-shortcuts-mini">
+
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+
+					</div>
+
+				</div><!-- #sidebar-shortcuts -->
+
+
+
+			<include file="public:left"/>
+
+
+
+
+
+			</div><!--/#sidebar-->
+
+
+
+		
+			<div id="main-content" class="clearfix">
+					
+
+					<div id="breadcrumbs">
+
+						<ul class="breadcrumb">
+
+							<li><i class="icon-home"></i> <a href="__APP__/Index/index">Home</a><span class="divider"><i class="icon-angle-right"></i></span></li>
+
+							<li class="active">newslist</li>
+						</ul><!--.breadcrumb-->
+
+
+
+						<div id="nav-search">
+
+							<form class="form-search">
+
+									<span class="input-icon">
+
+										<input autocomplete="off" id="nav-search-input" type="text" class="input-small search-query" placeholder="Search ..." />
+
+										<i id="nav-search-icon" class="icon-search"></i>
+
+									</span>
+
+							</form>
+
+						</div><!--#nav-search-->
+
+					</div><!--#breadcrumbs-->
+
+
+
+					<div id="page-content" class="clearfix">
+						
+						<div class="page-header position-relative">
+							<h1 style="height: 65px;" id="zxc">填写类型名称： 
+							<small><i class="icon-double-angle-right"></i>
+									<form method='post' action='__APP__/Policy/newsadd'><input type='text' name='typename'>
+									<select name="idstr">
+										<option>添加大类
+										<volist id="vo" name="data">
+											<option value="{$vo.id}|{$vo.path}">{$vo.gang}{$vo.typename}</option>
+										</volist>
+										</option>
+									</select>
+									<input type="submit" value='提交'>
+								</form>
+							</small></h1>
+						</div><!--/page-header-->
+
+					</div>
+<!-- PAGE CONTENT BEGINS HERE -->
+<style>
+	.span12 table tr td a
+	{
+		margin-left:20px;
+	}
+</style>
+
+			<div class="row-fluid">
+				<div class="span12"  style="margin-left: 33px;">
+					 <table border="1" cellspacing="0" cellpadding="5" id="msglist2" style="float: left;margin-right: 33px;">
+						<volist id="vo" name="data">
+<script type="text/javascript" src="__PUBLIC__/Js/admin/jquery-1.8.3.js"></script>
+<script language="javascript">
+/*	function fenge(abc)
+	{
+		//alert(abc);
+		alert(abc[1]);
+		var strs = new Array(); //定义一数组 
+		zzz ="1,4,5,6,8,345";
+		//alert(zzz[3]);
+		strs = zzz.split(','); //字符分割 
+		//alert(strs[3]);
+	}*/
+	$(document).ready(function()
+	{
+		$("#newsname{$vo.id}").focus(function()
+		{
+			$("#msglist3").empty();
+			//alert("newsname{$vo.id}");
+			//var id = {$vo.id};
+			//alert(id);
+			$.ajax({
+             type: "POST",
+             url: "__APP__/Policy/focusnews",
+             data: 'id='+{$vo.id},
+             dataType: "json",
+			 success: function (json) //回传函数
+			{
+				//alert(json);
+				//alert(a);
+				var abc =json;
+				//document.write(abc);
+				for(i=0;i<abc.length;i++)
+				{
+					//$('#msglist3 tr td').html(strs[i]);
+					$('#msglist3').append("<tr><td width='50%'>"+abc[i]+"</td></tr>");
+				}
+			}
+			}); 
+			$("#msglist3").show();
+		}); 
+	});
+
+</script>						
+							<tr>
+								<form action="__APP__/Policy/newsedit?id={$vo.id}" method="post" id="theform{$vo.id}">
+									<td width='50%'>
+										{$vo.gang}<input name='newsname' id='newsname{$vo.id}' value="{$vo.typename}" />
+									</td>
+									<td>
+										<a href="#" onclick="javascript:document.getElementById('theform{$vo.id}').submit()">修改</a>  
+										<a href="__APP__/Policy/newsdelete?id={$vo.id}"  onclick="if(confirm('确定要删除记录吗?')){return true;}return false;" >删除</a>
+									</td>
+								</form>
+							</tr>
+						</volist>
+					</table>
+					<table border="1" cellspacing="0" cellpadding="5" id="msglist3" style="margin-left:30px;display:none;" >
+<!-- 							<tr>
+								<td width='50%'>
+								</td>
+							</tr> -->
+					</table>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		<!-- basic scripts -->
+		<script type="text/javascript">
+		window.jQuery || document.write("<script src='__PUBLIC__/js/admin/js/jquery-1.9.1.min.js'>\x3C/script>");
+		</script>
+		
+		<script src="__PUBLIC__/js/admin/js/bootstrap.min.js"></script>
+		<!-- page specific plugin scripts -->
+		
+		<script type="text/javascript" src="__PUBLIC__/js/admin/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/admin/js/jquery.dataTables.bootstrap.js"></script>
+		<!-- ace scripts -->
+		<script src="__PUBLIC__/js/admin/js/ace-elements.min.js"></script>
+		<script src="__PUBLIC__/js/admin/js/ace.min.js"></script>
+		<!-- inline scripts related to this page -->
+		
+		<script type="text/javascript">
+		$(function() {
+	var oTable1 = $('#table_report').dataTable( {
+	"aoColumns": [
+      { "bSortable": false },
+      null, null,null, null, null,
+	  { "bSortable": false }
+	] } );
+	
+	
+	$('table th input:checkbox').on('click' , function(){
+		var that = this;
+		$(this).closest('table').find('tr > td:first-child input:checkbox')
+		.each(function(){
+			this.checked = that.checked;
+			$(this).closest('tr').toggleClass('selected');
+		});
+			
+	});
+	$('[data-rel=tooltip]').tooltip();
+});
+
+		</script>
+	</body>
+</html>

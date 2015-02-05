@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>联系我们</title>
+ <link rel="stylesheet" href="__PUBLIC__/css/index/smohan.face.css" />
+<include file="Public:header"/>
+	<!-- END HEADER -->
+
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+		
+			<!-- BEGIN POST -->
+			<div id="post">
+			
+				<p class="post-meta">Published on November 10,2014, by Pengge
+				
+				<h1 class="post-header">now contact me</h1>
+				
+				<div class="post-video">
+					<div class="line-top"></div>
+					<iframe width="604" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://j.map.baidu.com/Atfmy"></iframe>
+					<div class="line-bottom"></div>
+				</div>
+				
+				<div class="post-entry">
+					<p>手机号码：15910616847</p>
+
+					<p>E-mail： 1064480036@qq.com</p>
+
+					<p>现公司住址：北京市海淀区中关村大街45号北京云华软件有限公司</p>
+				</div>
+				
+				<div class="post-share">
+					<ul>
+						<div class="bshare-custom"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-qzone">QQ空间</a><a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a><a title="分享到人人网" class="bshare-renren">人人网</a><a title="分享到腾讯微博" class="bshare-qqmb">腾讯微博</a><a title="分享到网易微博" class="bshare-neteasemb">网易微博</a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+							<span class="BSHARE_COUNT bshare-share-count">0</span></div>
+							<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+							<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+					</ul>
+				</div>
+				
+				<!-- BEGIN COMMENTS -->
+				<div id="comments">
+				
+					<h3><strong>精彩的留言</strong></h3>
+					
+					<ol>
+					<volist name="data" id="vo">
+						<li>
+						
+							<div class="comment">
+							
+								<div class="avatar">
+									<img src="__PUBLIC__/images/index/contactus/youke.jpg" alt=""/>
+								</div>
+								
+								<div class="comment-details">
+									<span class="author">{$vo.author}</span>
+									<span class="date">-{$vo.addtime}</span>
+									<span class="reply"><a href="###" onclick="opening({$vo.id})">Reply</a></span>
+									
+									<p>{$vo.comment}</p>
+								
+								</div>
+								
+							</div>
+							<if condition="$vo.replylist neq ''">
+								<volist name="vo['replylist']" id='reply'>
+								<ul>
+									<li>
+									
+										<div class="comment">
+										
+											<div class="avatar">
+												<img src="__PUBLIC__/images/index/contactus/youke.jpg" alt=""/>
+											</div>
+											
+											<div class="comment-details">
+												<span class="author">站长大人</span>
+												<span class="date">-{$reply.replytime}</span>
+												<!--<span class="reply"><a href="###" onclick="opening()">Reply</a></span>-->
+												
+												<p>{$reply.replycontent}</p>
+												
+											</div>
+									
+										</div>
+										
+									</li>
+								</ul>
+								</volist>
+							</if>
+						</li>
+					</volist>				
+					</ol>
+					
+					<h3><strong>给我留言</strong></h3>
+					
+					<form action="__APP__/Home/Index/leavemessage" id="comment-form" method="post" onsubmit="return leave();">
+						
+						<p>
+							<input type="text" name="author" value="" onblur="author_blur()" onfocus="author_focus()" id='author'/>
+							<label>姓名 <span class="required" id='must_name' style=''>(必须*)</span></label>
+							<label><img src="__PUBLIC__/images/index/contactus/random.jpg" width="40px" height="40px" id="random_click" style="cursor:pointer"/></label>
+						</p>
+							
+						<p>
+							<input type="text" name="email" value="" onblur="email_blur()" onfocus="email_focus()" id='email'/>
+							<label>邮箱 <span class="required" id='must_email' style=''>(必须*)</span></label>
+						</p>
+							
+						<p>
+							<input type="text" name="website" value="" />
+							<label>你的网站地址</label>
+						</p>
+							
+						<p>
+							<label>评价内容</label>
+							<!-- <textarea name="comment" cols="79" rows="10"></textarea> -->
+							<div id="Smohan_FaceBox" style="width: 600px;">
+						   <textarea name="comment" id="Smohan_text" class="smohan_text" cols="79" rows="10" style="width: 560px;"></textarea>
+						   <p style="width: 600px;">
+						   <a href="javascript:void(0)" class="face" title="表情"></a>
+						   <!--<button class="button" id="Smohan_Showface">显示表情</button>-->
+						   </p>
+						</div>	
+						<div id="Zones"></div>
+						</p>
+
+						<p>
+							<input type="submit" value="提交" />
+						</p>
+						
+					</form>
+				
+				</div>
+				<!-- END COMMENTS -->
+			<!--/DEMO-->
+		<script type="text/javascript">
+		$(function (){
+			$("a.face").smohanfacebox({
+				Event : "click",	//触发事件	
+				divid : "Smohan_FaceBox", //外层DIV ID
+				textid : "Smohan_text" //文本框 ID
+			});
+			//解析表情  $('#Zones').replaceface($('#Zones').html());
+		});
+		//Demo测试
+		$('#Smohan_Showface').click(function() {
+			 $('#Zones').fadeIn(360);
+			 $('#Zones').html($('#Smohan_text').val());
+			 $('#Zones').replaceface($('#Zones').html());//替换表情
+			});
+		var publicurl='__PUBLIC__';
+		//alert(publicurl);
+		</script>
+			</div>
+			<!-- END POST -->
+			
+		</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+	<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Index/index">Index</a></li>
+				<li><span> // </span><a href="__APP__/Home/Index/contactus">contactus</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+<script>
+	function author_blur()
+	{
+		//alert("333");
+		var author_content = document.getElementById('author').value;
+		//alert(author_content);
+		if(author_content == '')
+		{
+			document.getElementById('must_name').style.color='red';
+		}
+	}
+	function author_focus()
+	{
+		//alert("333");
+		var author_content = document.getElementById('author').value;
+		//alert(author_content);
+		if(author_content == '')
+		{
+			document.getElementById('must_name').style.color='';
+		}
+	}
+	function email_blur()
+	{
+		//alert("333");
+		var email_content = document.getElementById('email').value;
+		//alert(email_content);
+		if(email_content == '')
+		{
+			document.getElementById('must_email').style.color='red';
+		}
+	}
+	function email_focus()
+	{
+		//alert("333");
+		var email_content = document.getElementById('email').value;
+		//alert(email_content);
+		if(email_content == '')
+		{
+			document.getElementById('must_email').style.color='';
+		}
+	}
+	function leave()
+	{
+		var email_content = document.getElementById('email').value;
+		var author_content = document.getElementById('author').value;
+		if(email_content == "" || author_content == "")
+		{
+			return false;
+		}else
+		{
+			return true;
+		}
+	}
+	function opening(id)
+	{
+		var theid = id;
+		//alert(theid);
+		window.open (encodeURI('reply.html?id='+theid+''),'newwindow','height=300,width=400,top=200px,left=400px,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no') ;
+	}
+	$("#random_click").click(function()
+	{
+		//var author = document.getElementById("author");
+		var first = Math.ceil((Math.random()*{$first_count}));   
+		var second = Math.ceil((Math.random()*{$seconde_count}));   
+		//alert(first+","+second);
+		$.ajax({
+			type: "GET",
+			url: "__APP__/Home/Index/random_name",
+			data: "first="+first+"&second="+second,
+			//dataType: "json",
+			success: function(data)
+			{
+				$("#author").val(data);
+			}
+		});
+	});
+</script> 
+</html>

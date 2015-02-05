@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+ 
+<title>点点滴滴--闲时的叙述</title>
+ <link rel="stylesheet" href="__PUBLIC__/css/index/smohan.face.css" />
+<include file="Public:header"/>
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+			
+			<!-- BEGIN NEWS WRAPPER -->
+			<div id="news-wrapper">
+			
+				<h3 class="section-title">Loving Movies</h3>
+				
+				<!-- BEGIN NEWS ITEM -->
+				<volist name="data" id="vo">
+				<div class="news-item">
+				
+					<div class="news-thumb-wrapper">
+					
+						<a target="_blank" href="{$vo.movie_url}"><img src="__PUBLIC__/images/index/moviepic/{$vo.movie_pic}" alt="" style="width:600px;height:300px"/></a>
+						
+						<div class="news-arrows"></div>
+						<!-- <h1><a href="./news-post.html">Interview with Bulletstorm creator</a></h1> -->
+					
+					</div>
+					
+					<div class="news-meta-wrapper">
+						<span class="news-meta">Recommended time,<i>{$vo.addtime}</i></span>
+						<span class="news-cats"><a href="{$vo.movie_url}">{$vo.movie_name}</a></span>
+					</div>
+					
+					<p>{$vo.movie_says}...<!-- <a href="#">Read More</a> --></p>
+				
+				</div>
+				</volist>
+				<!-- END NEWS ITEM -->
+			
+			</div>
+			<!-- END NEWS WRAPPER -->
+			
+			<!-- BEGIN PAGINATION -->
+			<div id="pagination">
+				{$page}
+			</div>
+			<!-- END PAGINATION -->
+				<div id="comments">
+				
+					<h3><strong style="font-size:24px;">评论列表</strong></h3>
+					
+					<ol>
+					<volist name="comment" id="vo">
+						<li>
+						
+							<div class="comment">
+							
+								<div class="avatar">
+									<img src="__PUBLIC__/images/index/contactus/youke.jpg" alt=""/>
+								</div>
+								
+								<div class="comment-details">
+									<span class="author">{$vo.author}</span>
+									<span class="date">-{$vo.comment_time}</span>
+									
+									<p>{$vo.comment}</p>
+								
+								</div>
+								
+							</div>
+						</li>
+					</volist>
+					
+					</ol>
+					
+					<h3><strong style="font-size:24px;">留下你的评论或者你期待的影片</strong></h3>
+					
+					<form action="__APP__/Home/Diary/leavecomment" id="comment-form" method="post" onsubmit="return leave();">
+						
+						<p>
+							<input type="text" name="author" value="" onblur="author_blur()" onfocus="author_focus()" id='author'/>
+							<label>姓名 <span class="required" id='must_name' style=''>(必须*)</span></label>
+						</p>
+							
+							
+						<p>
+							<label>评价内容</label>
+							<!-- <textarea name="comment" cols="79" rows="10"></textarea> -->
+							<div id="Smohan_FaceBox">
+						   <textarea name="comment" id="Smohan_text" class="smohan_text" cols="79" rows="3" style="width: 500px;"></textarea>
+						   <p style="width:500px;">
+						   <a href="javascript:void(0)" class="face" title="表情" ></a>
+						   <!--<button class="button" id="Smohan_Showface">显示表情</button>-->
+						   </p>
+						</div>	
+						<div id="Zones"></div>
+						</p>
+
+						<p>
+							<input type="submit" value="提交" />
+						</p>
+						
+					</form>
+				
+				</div>
+		<script type="text/javascript">
+		$(function (){
+			$("a.face").smohanfacebox({
+				Event : "click",	//触发事件	
+				divid : "Smohan_FaceBox", //外层DIV ID
+				textid : "Smohan_text" //文本框 ID
+			});
+			//解析表情  $('#Zones').replaceface($('#Zones').html());
+		});
+		//Demo测试
+		$('#Smohan_Showface').click(function() {
+			 $('#Zones').fadeIn(360);
+			 $('#Zones').html($('#Smohan_text').val());
+			 $('#Zones').replaceface($('#Zones').html());//替换表情
+			});
+		var publicurl='__PUBLIC__';
+		//alert(publicurl);
+		</script>
+		</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/notbusylist">Diary</a></li>
+				<li><span> // </span><a href="__APP__/Home/Diary/loving_movie">loving_movie</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+<script>
+	function author_blur()
+	{
+		//alert("333");
+		var author_content = document.getElementById('author').value;
+		//alert(author_content);
+		if(author_content == '')
+		{
+			document.getElementById('must_name').style.color='red';
+		}
+	}
+	function author_focus()
+	{
+		//alert("333");
+		var author_content = document.getElementById('author').value;
+		//alert(author_content);
+		if(author_content == '')
+		{
+			document.getElementById('must_name').style.color='';
+		}
+	}
+	function leave()
+	{
+		var author_content = document.getElementById('author').value;
+		if(author_content == "")
+		{
+			return false;
+		}else
+		{
+			return true;
+		}
+	}
+</script> 
+</html>

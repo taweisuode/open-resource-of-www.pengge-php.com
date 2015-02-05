@@ -1,0 +1,90 @@
+<html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/css/index/smohan.face.css" />	
+<script type="text/javascript" src="__PUBLIC__/js/index/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index/smohan.face1.js"></script>
+</head>
+<body>
+输入回复内容:
+			<div id="Smohan_FaceBox">
+	  	 	<textarea name="reply" id="Smohan_text" class="smohan_text" cols="20" rows="2" style="width: 365px; height: 79px; margin-top: -28px;"></textarea>
+		   	<p>
+		   	<a href="javascript:void(0)" class="face" title="表情"></a>
+			<input type="hidden" name="theid" id="theid" value=""/>
+			<input type="button" value="回复" id="reply"/>
+</body>
+<script language="javascript" type="text/javascript">
+function getpara()//获取参数的函数
+{
+	var url=document.URL;
+	//alert(url);
+	var para="";
+	var arr = new Array();
+	if(url.lastIndexOf("?")>0)
+	{
+        para=url.substring(url.lastIndexOf("?")+1,url.length);
+		//alert(para);
+		var theid = para.split("=");
+		var theid = theid[1];
+		//alert(theid);
+		document.getElementById('theid').value= theid;
+	}
+	else
+	{
+		document.write("没有参数!");
+	}
+
+}
+getpara();//执行函数
+</script>
+<script>
+$(document).ready(function(){
+	$("#reply").click(function()
+	{
+		var text =$("#Smohan_text").val();
+		var theid = $("#theid").val();
+		//alert(theid);
+		$.ajax({
+			type: "POST",
+			url: "__APP__/Home/Index/thereply",
+			data: "reply="+text+"&theid="+theid,
+			success: function(data)
+			{
+				//alert(data);
+				if(data == 'reply_ok')
+				{
+					//alert(111);
+					window.opener.location.reload();    //父窗口刷新  
+					window.close();                     //当前窗口关闭
+				}
+			},
+			error: function()
+			{
+				alert("怎么出错了呢");
+			}
+		});
+	});
+	
+});
+</script>
+<script type="text/javascript">
+		$(function (){
+			$("a.face").smohanfacebox({
+				Event : "click",	//触发事件	
+				divid : "Smohan_FaceBox", //外层DIV ID
+				textid : "Smohan_text" //文本框 ID
+			});
+			//解析表情  $('#Zones').replaceface($('#Zones').html());
+		});
+		//Demo测试
+		$('#Smohan_Showface').click(function() {
+			 $('#Zones').fadeIn(360);
+			 $('#Zones').html($('#Smohan_text').val());
+			 $('#Zones').replaceface($('#Zones').html());//替换表情
+			});
+		var publicurl='__PUBLIC__';
+		//alert(publicurl);
+		</script>
+</html>

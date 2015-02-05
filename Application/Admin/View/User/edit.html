@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>111Dashboard - Ace Admin</title>
+		<meta name="description" content="overview & stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- basic styles -->
+		<link href="__PUBLIC__/css/admin/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="__PUBLIC__/css/admin/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!-- page specific plugin styles -->
+		
+		<!-- ace styles -->
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-skins.min.css" />
+		<!--[if lt IE 9]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-ie.min.css" />
+		<![endif]-->
+	</head>
+	<body>
+	
+    <include file="public:top"/>
+		<div class="container-fluid" id="main-container">
+			<a href="#" id="menu-toggler"><span></span></a><!-- menu toggler -->
+
+
+
+			<div id="sidebar">
+
+				
+
+				<div id="sidebar-shortcuts">
+
+					<div id="sidebar-shortcuts-large">
+
+						<button class="btn btn-small btn-success"><i class="icon-signal"></i></button>
+
+						<button class="btn btn-small btn-info"><i class="icon-pencil"></i></button>
+
+						<button class="btn btn-small btn-warning"><i class="icon-group"></i></button>
+
+						<button class="btn btn-small btn-danger"><i class="icon-cogs"></i></button>
+
+					</div>
+
+					<div id="sidebar-shortcuts-mini">
+
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+
+					</div>
+
+				</div><!-- #sidebar-shortcuts -->
+
+
+
+			<include file="public:left"/>
+
+
+
+
+
+			</div><!--/#sidebar-->
+
+
+
+		
+			<div id="main-content" class="clearfix">
+					
+
+					<div id="breadcrumbs">
+
+						<ul class="breadcrumb">
+
+							<li><i class="icon-home"></i> <a href="#">Home</a><span class="divider"><i class="icon-angle-right"></i></span></li>
+
+							<li class="active">detail</li>
+						</ul><!--.breadcrumb-->
+
+
+
+						<div id="nav-search">
+
+							<form class="form-search">
+
+									<span class="input-icon">
+
+										<input autocomplete="off" id="nav-search-input" type="text" class="input-small search-query" placeholder="Search ..." />
+
+										<i id="nav-search-icon" class="icon-search"></i>
+
+									</span>
+
+							</form>
+
+						</div><!--#nav-search-->
+
+					</div><!--#breadcrumbs-->
+					
+					
+					<div class="row-fluid">
+	<div class="span12">
+	<style>
+	.thebody tr td{
+		padding-top: 0px; padding-bottom: 0px;
+	}
+	</style>
+	<form action="__APP__/User/submit_user" id="theform" enctype="multipart/form-data">
+		<table id="table_bug_report" class="table table-striped table-bordered table-hover">									
+			<tbody class="thebody">
+					
+					<tr><td>用户名 <input type="text" name="user_nc" value='{$vo.user_nc}' /></td></tr>
+					<tr><td>用户等级{$vo.user_nc}</td>
+					<tr><td>密码 <input type="password" name="arr[user_passwd]" value='{$vo.license_person}' /></td></tr>
+					<tr><td>Email <input type="text" name="arr[user_email]" value='{$info.user_email}' ></td></tr>
+					<tr><td>手机{$vo.enterprise_industry}</td></tr>
+					<tr><td>电话{$vo.enterprise_type}</td></tr>
+					<tr><td>qq{$vo.license_name}</td></tr>
+					<tr><td>详细地址{$vo.user_address}</td></tr>
+					<tr><td>邮编{$vo.user_regtime}</td></tr>
+					<tr><td>状态<if condition="$vo.user_status eq 0"><span style="color:red;">未审核</span><else />已审核</if></td></tr>
+					<tr><td>商户类型{$vo.user_audittime}</td></tr>
+					<tr><td>营业执照号{$vo.user_audittime}</td></tr>
+					<tr><td>公司名称{$vo.user_audittime}</td></tr>
+					<tr><td>公司法人{$vo.user_audittime}</td></tr>
+					<tr><td>法人身份证号{$vo.user_audittime}</td></tr>
+					<tr><td>营业执照有效期{$vo.user_audittime}</td></tr>
+					<tr><td>企业类型{$vo.user_audittime}</td></tr>
+					<tr><td>经营区域{$vo.user_audittime}</td></tr>
+					<tr><td>主营方向{$vo.user_audittime}</td></tr>
+					<tr><td>所属区域{$vo.user_audittime}</td></tr>
+					<tr><td>主营方向{$vo.user_audittime}</td></tr>
+					<tr><td>所属行业{$vo.user_audittime}</td></tr>
+					<tr><td>商品图片{$vo.user_audittime}</td></tr>
+					<tr><td>公司简介{$vo.user_audittime}</td></tr>
+					<tr><td><input type="submit" value="提交" /></td></tr>
+				
+				
+		</tbody>
+		
+		</table>
+	</form>
+	</div><!--/span-->
+</div><!--/row-->
+</body>
+</html>

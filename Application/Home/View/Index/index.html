@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>鹏哥的个人网站</title>
+<meta property="wb:webmaster" content="8662676c110ca4f4" />
+<meta name="baidu-site-verification" content="OKKa8TGbjW" />
+<include file="Public:header"/>
+	
+	<!-- BEGIN SLIDER -->
+	<div class="slider">
+	
+		<div class="sliderContent">
+	
+			<!-- BEGIN FEATURED ITEM -->
+			<div class="featured-item" style="background:#000 url(__PUBLIC__/images/index/feat2.jpg) no-repeat center; height:280px;">
+				
+		<!--		<div class="featured-inner">
+					
+	 				<div class="featured-inner">
+					
+						<div class="featured-arrows"></div>
+						<h1><a href="./news-post.html">Dead Space 2 breaks all sales records</a></h1>
+						<p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
+						
+					</div>
+						
+				</div> -->
+				
+			</div>
+			<!-- END FEATURED ITEM -->
+			
+			<!-- BEGIN FEATURED ITEM -->
+			<div class="featured-item" style="background:#000 url(__PUBLIC__/images/index/feat1.jpg) no-repeat center; height:280px;">
+				
+<!-- 				<div class="featured-inner">
+					
+					<div class="featured-inner">
+					
+						<div class="featured-arrows"></div>
+						<h1><a href="./news-post.html">Interview with Bulletstorm creator</a></h1>
+						<p class="featured-meta">By John Doe, March 14, 2011</p>
+						
+					</div>
+						
+				</div> -->
+				
+			</div>
+			<!-- END FEATURED ITEM -->
+			
+			<!-- BEGIN FEATURED ITEM -->
+			<div class="featured-item" style="background:#000 url(__PUBLIC__/images/index/feat6.jpg) no-repeat center; height:280px;">
+				
+<!-- 				<div class="featured-inner">
+					
+					<div class="featured-inner">
+					
+						<div class="featured-arrows"></div>
+						<h1><a href="./news-post.html">Diablo 3 release date rumors</a></h1>
+						<p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
+						
+					</div>
+						
+				</div> -->
+				
+			</div>
+			<!-- END FEATURED ITEM -->
+			
+			<!-- BEGIN FEATURED ITEM -->
+			<div class="featured-item" style="background:#000 url(__PUBLIC__/images/index/feat5.jpg) no-repeat center; height:280px;">
+				
+	<!-- 			<div class="featured-inner">
+					
+					<div class="featured-inner">
+					
+						<div class="featured-arrows"></div>
+						<h1><a href="./news-post.html">Minecraft sells over 1 million copies in on year</a></h1>
+						<p class="featured-meta">By Sebastian Rosenkvist, March 14, 2011</p>
+						
+					</div>
+						
+				</div> -->
+				
+			</div>
+			<!-- END FEATURED ITEM -->
+		
+		</div>
+		
+		<div class="top-overlay"></div>
+		<div class="bottom-overlay"></div>
+		
+	</div>
+	<!-- END SLIDER -->
+    <div class="inner_copyright">Collect from <a href="http://www.cssmoban.com/" target="_blank" title="网页模板">网页模板</a></div>
+	
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+			
+			<!-- BEGIN NEWS WRAPPER -->
+			<div id="news-wrapper">
+			
+				<h3 class="section-title">most wonderful</h3>
+				
+				<!-- BEGIN NEWS ITEM -->
+				<div class="news-item">
+				
+					<div class="news-thumb-wrapper">
+					
+						<video src="__PUBLIC__/video/1.webm" width="600px" height="400px" controls="controls" poster="__PUBLIC__/images/index/kobe.jpg" preload="none" > 
+						</video>
+					
+					</div>
+					
+					<div class="news-meta-wrapper">
+						<span class="news-meta">Recommended time, <i>November 06,2014</i></span>
+						<span class="news-cats"><a href="#">科比--招牌动作</a></span>
+					</div>
+					
+					<p>在我心中，这也许是科比最好的视频，没有之一...</p>
+				
+				</div>
+				<!-- END NEWS ITEM -->
+				
+				<!-- BEGIN NEWS ITEM -->
+				<div class="news-item">
+				
+					<div class="news-thumb-wrapper">
+					
+						<video src="__PUBLIC__/video/2.webm" width="600" height="400" controls="controls" poster="__PUBLIC__/images/index/wcg.jpg" preload="none" >  
+						</video>
+					</div>
+					
+					<div class="news-meta-wrapper">
+						<span class="news-meta">Recommended time, <i>November 06,2014</i></span>
+						<span class="news-cats"><a href="#">WCG-beyond the game</a></span>
+					</div>
+					
+					<p>dota的回忆... </p>
+				
+				</div>
+				<!-- END NEWS ITEM -->
+				
+				<!-- BEGIN NEWS ITEM -->
+				<volist name="data" id="vo">
+				<div class="review-item">
+					<div class="archive-score green">{$vo.count_score}</div>
+					<h5><a href="__APP__/Home/Diary/notbusyinfo?id={$vo.id}">{$vo.article_title} ——</a> <small>{$vo.small_title1}</small></h5>
+					<p><strong>{$vo.addtime}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.article_content1|msubstr=0,100}... <a href="__APP__/Home/Diary/notbusyinfo?id={$vo.id}">[详细]&raquo;</a></p>
+				</div>
+				</volist>
+				<volist name="result1" id="vo">
+				<div class="review-item second">
+					<div class="archive-score green">{$vo.count_score}</div>
+					<h5><a href="__APP__/Home/Study/phplistinfo?id={$vo.id}">{$vo.article_title} ——</a> <small>{$vo.small_title1}</small></h5>
+					<p><strong>{$vo.addtime}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.article_content1|msubstr=0,100}... <a href="__APP__/Home/Study/phplistinfo?id={$vo.id}">[详细]&raquo;</a></p>
+				</div>
+				</volist>
+				<!-- END NEWS ITEM -->
+			
+			</div>
+			<!-- END NEWS WRAPPER -->
+			
+			<!-- BEGIN PAGINATION -->
+<!-- 			<div id="pagination">
+			
+				<span class="current">1</span> 
+				<a href="#"><span>2</span></a> 
+				<a href="#"><span>3</span></a> 
+				<a href="#"><span>4</span></a> 
+				<a href="#"><span>5</span></a>
+				<a href="#"><span>6</span></a> 
+				<a href="#"><span>7</span></a> 
+				<a href="#"><span>8</span></a> 
+				<a href="#"><span>Next</span></a>
+			
+			</div> -->
+			<!-- END PAGINATION -->
+			<div style="color: #006acd;font-size:25px">如果您对本网站感兴趣，或者您对本网站的开源性代码表示认同与欣赏，您可以对我提供捐赠<br>
+			以下是支付宝捐赠：
+			扫一扫，您就能支付啦！</div>
+			<center><img src="__PUBLIC__/images/index/zhifubao.jpg" /></center>
+		</div>
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+		<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END MAIN WRAPPER -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Index/index">Index</a></li>
+				<li><span> // </span><a href="__APP__/Home/Index/index">index</a></li>
+
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+	
+</html>

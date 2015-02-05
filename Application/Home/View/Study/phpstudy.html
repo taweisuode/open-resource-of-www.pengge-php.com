@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+ 
+<title>工作.学习--php入门与精通</title>
+<include file="Public:header"/>
+	<!-- BEGIN MAIN WRAPPER -->
+	<div id="main-wrapper">
+	
+		<!-- BEGIN MAIN -->
+		<div id="main">
+			
+			<!-- BEGIN REVIEW ARCHIVE -->
+			<div id="review-archive">
+			
+				<h3 class="section-title">PHP入门与精通</h3>
+				<img src="__PUBLIC__/images/index/notbusylist/solar-system.gif" style="width:500px;height:150px;margin-left: 42px;"/>
+				<volist name="data" id="vo">
+				<div class="review-item">
+					<div class="archive-score green">{$vo.count_score}</div>
+					<h5><a href="__APP__/Home/Study/phplistinfo?id={$vo.id}">{$vo.article_title} ——</a> <small>{$vo.small_title1}</small></h5>
+					<p><strong>{$vo.addtime}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.article_content1|msubstr=0,100}...<a href="__APP__/Home/Study/phplistinfo?id={$vo.id}">[详细]&raquo;</a></p>
+				</div>
+				</volist>
+
+				
+			</div>
+			<!-- END REVIEW ARCHIVE -->
+
+			<!-- BEGIN PAGINATION -->
+<!-- 			<div id="pagination">
+		
+				<span class="current">1</span> 
+				<a href="#"><span>2</span></a> 
+				<a href="#"><span>3</span></a> 
+				<a href="#"><span>4</span></a> 
+				<a href="#"><span>5</span></a>
+				<a href="#"><span>6</span></a> 
+				<a href="#"><span>7</span></a> 
+				<a href="#"><span>8</span></a> 
+				<a href="#"><span>Next</span></a>
+			
+			</div> -->
+			<!-- END PAGINATION -->
+			<img src="__PUBLIC__/images/index/notbusylist/fengjing1.jpg" style="height:300px;width:600px" alt="好看的风景"/>
+		
+		</div>
+		
+		<!-- END MAIN -->
+		
+		<!-- BEGIN SIDEBAR -->
+	<include file="Public:right" />
+	
+		</div>
+		<!-- END SIDEBAR -->
+
+	<!-- END main-wrapper -->
+	
+	<!-- BEGIN FOOTER TOP -->
+	<div id="footer-top-wrapper">
+	
+		<div id="footer-top">
+		
+			<ul id="footer-navigation">
+				<li><span> // </span><a href="__APP__/Home/Index/index">Home</a></li>
+				<li><span> // </span><a href="__APP__/Home/Study/phpstudy">Study</a></li>
+				<li><span> // </span><a href="__APP__/Home/Study/phpstudy">Study</a></li>
+			</ul>
+			
+			<div id="back-top">
+				<a href="#">Back to top</a>
+			</div>
+			
+		</div>
+	
+	</div>
+	<!-- END FOOTER TOP -->
+	
+	<!-- BEGIN FOOTER -->
+
+<include file="Public:footer" />
+	<!-- END FOOTER BOTTOM WRAPPER -->
+	
+</body>
+	
+</html>

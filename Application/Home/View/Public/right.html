@@ -1,0 +1,201 @@
+		<div id="sidebar">
+		
+			<div class="widget">
+			
+				<h4 class="widget-title tabs">Professional literature</h4>
+				
+				<div class="panel-wrapper">
+					<a href="#panel-1" rel="panel" class="selected">All</a>
+					<a href="#panel-2" rel="panel">idle narrative</a>
+					<a href="#panel-3" rel="panel">wish wall</a>
+					<a href="#panel-4" rel="panel">phpstudy</a>
+					<!-- <a href="#panel-5" rel="panel">Wii</a> -->
+				</div>
+
+				<div id="mask">
+					<div id="panel">
+					
+						<div id="panel-1">
+							<volist name="saying" id="vo" offset="0" length="1" key="k">
+							<div class="side-item">
+							
+								<img src="__PUBLIC__/images/index/gamethumb1.jpg" alt="" class="side-item-thumb"/>
+								<h4><a href="__APP__/Home/Diary/notbusyinfo?id={$vo.id}">{$vo.article_title}</a></h4>
+								<span class="side-item-cat">{$vo.article_author}</span>
+								<span class="side-item-meta">{$vo.addtime}</span>
+								<div class="side-score darkgreen">{$vo.count_score}</div>
+								
+							</div>
+							</volist>
+							<volist name="wish" id="vo" offset="0" length="1" key="k">					
+							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb2.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="__APP__/Home/Diary/wishwall">{$vo.content|msubstr=0,30}</a></h4>
+								<span class="side-item-cat">{$vo.name}</span>
+								<span class="side-item-meta">{$vo.addtime}</span>
+								<div class="side-score green">10</div>
+								
+							</div>
+							</volist>
+							<volist name="phplist" id="vo" offset="0" length="1" key="k">					
+							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb3.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="__APP__/Home/Study/phplistinfo?id={$vo.id}">{$vo.article_title}</a></h4>
+								<span class="side-item-cat">{$vo.article_author}</span>
+								<span class="side-item-meta">{$vo.addtime}</span>
+								<div class="side-score green">{$vo.count_score}</div>
+								
+							</div>
+							</volist>
+<!-- 							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb3.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="./review-post.html">Little Big Planet 2</a></h4>
+								<span class="side-item-cat">Wii</span>
+								<span class="side-item-meta">March 14, 2011 - 32 Comments</span>
+								<div class="side-score yellow">5.7</div>
+								
+							</div>
+							
+							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb4.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="./review-post.html">Mass Effect 2</a></h4>
+								<span class="side-item-cat">PC</span>
+								<span class="side-item-meta">March 14, 2011 - 32 Comments</span>
+								<div class="side-score green">8.5</div>
+								
+							</div> -->
+							
+								
+						</div>
+						
+						<div id="panel-2">
+							
+							<volist name="saying" id="vo" offset="0" length="5" key="k">
+							<div class="side-item">
+							
+								<img src="__PUBLIC__/images/index/gamethumb{$k}.jpg" alt="" class="side-item-thumb"/>
+								<h4><a href="__APP__/Home/Diary/notbusyinfo?id={$vo.id}">{$vo.article_title}</a></h4>
+								<span class="side-item-cat">{$vo.article_author}</span>
+								<span class="side-item-meta">{$vo.addtime}</span>
+								<div class="side-score darkgreen">{$vo.count_score}</div>
+								
+							</div>
+							</volist>
+							
+							
+<!-- 							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb4.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="./review-post.html">Mass Effect 2</a></h4>
+								<span class="side-item-cat">Xbox 360</span>
+								<span class="side-item-meta">March 14, 2011 - 32 Comments</span>
+								<div class="side-score green">8.5</div>
+								
+							</div> -->
+							
+
+							
+						</div>
+						
+						<div id="panel-3">
+							
+							<volist name="wish" id="vo" offset="0" length="4" key="k">					
+							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb{$k}.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="__APP__/Home/Diary/wishwall">{$vo.content|msubstr=0,30}</a></h4>
+								<span class="side-item-cat">{$vo.name}</span>
+								<span class="side-item-meta">{$vo.addtime}</span>
+								<div class="side-score green">10</div>
+								
+							</div>
+							</volist>
+								
+
+						</div>
+						
+						<div id="panel-4">
+							
+							<volist name="phplist" id="vo" offset="0" length="5" key="k">					
+							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb{$k}.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="__APP__/Home/Study/phplistinfo?id={$vo.id}">{$vo.article_title}</a></h4>
+								<span class="side-item-cat">{$vo.article_author}</span>
+								<span class="side-item-meta">{$vo.addtime}</span>
+								<div class="side-score green">{$vo.count_score}</div>
+								
+							</div>
+							</volist>
+								
+<!-- 							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb3.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="./review-post.html">Mass Effect 2</a></h4>
+								<span class="side-item-cat">PC</span>
+								<span class="side-item-meta">March 14, 2011 - 32 Comments</span>
+								<div class="side-score green">8.5</div>
+								
+							</div>
+							
+							<div class="side-item">
+									
+								<img src="__PUBLIC__/images/index/gamethumb4.jpg" alt="" class="side-item-thumb" />
+								<h4><a href="./review-post.html">Mass Effect 2</a></h4>
+								<span class="side-item-cat">PC</span>
+								<span class="side-item-meta">March 14, 2011 - 32 Comments</span>
+								<div class="side-score green">8.5</div>
+								
+							</div> -->
+							
+							
+						</div>
+						
+						
+					</div>
+				</div>
+			
+			</div>
+			
+			<!-- BEGIN WIDGET BANNER -->
+			<div class="widget-banner">
+			
+				<img src="__PUBLIC__/images/index/kaer.jpg" alt="" style="width:300px;height:200px"/>
+			
+			</div>
+			<!-- END WIDGET BANNER -->
+			
+			<div class="widget">
+			
+				<h4 class="widget-title">Hear the extreme</h4>
+				<volist name="music" id="vo">
+				<div class="side-item">
+									
+					<img src="__PUBLIC__/images/index/music_1.jpg" alt="" class="side-item-thumb" />
+					<h4><a href="__APP__/Home/Manage/music?music_id={$vo.id}">{$vo.music_name}--{$vo.music_author}</a></h4>
+					<span class="side-item-meta">November 06,2014</span>
+								
+				</div>
+				</volist>
+			</div>
+			
+			<div class="widget">
+			
+				<h4 class="widget-title">Visual perfection</h4>
+				<volist name="media" id="vo">
+					<div class="side-item">
+						
+						<div class="media-thumb">
+							<a href="__APP__/Home/Diary/loving_movie"><div class="video-icon"></div>
+							<img src="__PUBLIC__/images/index/moviepic/{$vo.movie_pic}" alt="{$vo.movie_name}" style="height:200px;width:300px"/></a>
+						</div>
+								
+					</div>
+				</volist>
+				</div>
+						
+			</div>

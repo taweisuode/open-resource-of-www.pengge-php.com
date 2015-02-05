@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>111Dashboard - Ace Admin</title>
+		<meta name="description" content="overview & stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- basic styles -->
+		<link href="__PUBLIC__/css/admin/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="__PUBLIC__/css/admin/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!-- page specific plugin styles -->
+		
+		<!-- ace styles -->
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-skins.min.css" />
+		<!--[if lt IE 9]>
+		  <link rel="stylesheet" href="__PUBLIC__/css/admin/css/ace-ie.min.css" />
+		<![endif]-->
+	</head>
+	<body>
+	
+    <include file="public:top"/>
+		<div class="container-fluid" id="main-container">
+			<a href="#" id="menu-toggler"><span></span></a><!-- menu toggler -->
+
+
+
+			<div id="sidebar">
+
+				
+
+				<div id="sidebar-shortcuts">
+
+					<div id="sidebar-shortcuts-large">
+
+						<button class="btn btn-small btn-success"><i class="icon-signal"></i></button>
+
+						<button class="btn btn-small btn-info"><i class="icon-pencil"></i></button>
+
+						<button class="btn btn-small btn-warning"><i class="icon-group"></i></button>
+
+						<button class="btn btn-small btn-danger"><i class="icon-cogs"></i></button>
+
+					</div>
+
+					<div id="sidebar-shortcuts-mini">
+
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+
+					</div>
+
+				</div><!-- #sidebar-shortcuts -->
+
+
+
+			<include file="public:left"/>
+
+
+
+
+
+			</div><!--/#sidebar-->
+
+
+
+		
+			<div id="main-content" class="clearfix">
+					
+
+					<div id="breadcrumbs">
+
+						<ul class="breadcrumb">
+
+							<li><i class="icon-home"></i> <a href="__APP__/Index/index">Home</a><span class="divider"><i class="icon-angle-right"></i></span></li>
+
+							<li class="active">usertypelist</li>
+						</ul><!--.breadcrumb-->
+
+
+
+						<div id="nav-search">
+
+							<form class="form-search">
+
+									<span class="input-icon">
+
+										<input autocomplete="off" id="nav-search-input" type="text" class="input-small search-query" placeholder="Search ..." />
+
+										<i id="nav-search-icon" class="icon-search"></i>
+
+									</span>
+
+							</form>
+
+						</div><!--#nav-search-->
+
+					</div><!--#breadcrumbs-->
+
+
+
+					<div id="page-content" class="clearfix">
+						
+						<div class="page-header position-relative">
+							<h1 style="height: 65px;">新增{$count}级分类
+							<if condition="$count neq '一'"><a href="__APP__/User/usertypelist?pid={$parent_id}" style="margin-left: 1052px;font-size:20px;">返回上一级</a></if> 
+							
+							<small><i class="icon-double-angle-right"></i><form action="__APP__/User/addusertype" name="theform" method="post"><input type="hidden" name="usertype_pid"    value="{$info['usertype_id']}" /> <input type="hidden" name="path" value="{$info['path']}"><input type="text" name="usertype_name" value="" placeholder="如农业生产组织 ..."/><input type="submit" value="submit" style="margin-top: -10px;" /></form></small></h1>
+						</div><!--/page-header-->
+
+						</div>
+<!-- PAGE CONTENT BEGINS HERE -->
+<div class="row-fluid">
+	<div class="span12">
+	<div style="font-size:24px; margin:0px 0px 6px 550px;color:#6fb3e0">{$info['usertype_name']}{$count}级分类</if></div>
+		<table id="table_bug_report" class="table table-striped table-bordered table-hover">
+			<thead>
+			<tr>
+				<volist name="data" id="vo" key='k'>
+					
+						<td><span>{$vo.usertype_name}</span><a href="__APP__/User/usertypelist?pid={$vo.usertype_id}" title="管理">管理</a>&nbsp;&nbsp;<a href="__APP__/User/useredit?pid={$vo.usertype_id}" title="修改">修改</a>&nbsp;&nbsp;<a href="__APP__/User/userdelete?pid={$vo.usertype_id}" 
+						onclick="if(confirm('确定要删除记录吗?')){return true;}return false;" title="删除">删除</a>
+						</td>
+					<if condition="$k % 4 eq 0">      <!--$k是从1开始的  除号用%表示-->
+					</tr><tr>
+					</if>
+				</volist>
+			</tr>
+			</thead>
+									
+		</table>
+	</div><!--/span-->
+	<style>
+	.pagelist{margin-left:500px;}
+	.pagelist a,.pagelist span
+	{
+		margin-left:9px;
+	}
+	</style>
+	<div class="pagelist">{$page}</div>
+</div><!--/row-->
+
+		<!-- basic scripts -->
+		<script src="1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		window.jQuery || document.write("<script src='__PUBLIC__/js/admin/js/jquery-1.9.1.min.js'>\x3C/script>");
+		</script>
+		
+		<script src="__PUBLIC__/js/admin/js/bootstrap.min.js"></script>
+		<!-- page specific plugin scripts -->
+		
+		<script type="text/javascript" src="__PUBLIC__/js/admin/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/admin/js/jquery.dataTables.bootstrap.js"></script>
+		<!-- ace scripts -->
+		<script src="__PUBLIC__/js/admin/js/ace-elements.min.js"></script>
+		<script src="__PUBLIC__/js/admin/js/ace.min.js"></script>
+		<!-- inline scripts related to this page -->
+		
+		<script type="text/javascript">
+		$(function() {
+	var oTable1 = $('#table_report').dataTable( {
+	"aoColumns": [
+      { "bSortable": false },
+      null, null,null, null, null,
+	  { "bSortable": false }
+	] } );
+	
+	
+	$('table th input:checkbox').on('click' , function(){
+		var that = this;
+		$(this).closest('table').find('tr > td:first-child input:checkbox')
+		.each(function(){
+			this.checked = that.checked;
+			$(this).closest('tr').toggleClass('selected');
+		});
+			
+	});
+	$('[data-rel=tooltip]').tooltip();
+})
+		</script>
+	</body>
+</html>
