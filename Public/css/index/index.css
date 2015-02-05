@@ -1,0 +1,901 @@
+
+@charset "gb2312";
+.indexTag {
+    margin-top: 10px;
+}
+.indexTag .indexTagHd {
+    border-bottom: 2px solid #259b24;
+    height: 27px;
+    position: relative;
+}
+.indexTag .indexTagHd li {
+    background: url("../images/pub.png") no-repeat scroll 0 -106px rgba(0, 0, 0, 0);
+    color: #666;
+    cursor: pointer;
+    float: left;
+    height: 27px;
+    line-height: 27px;
+    margin: 0 5px 0 0;
+    text-align: center;
+    width: 84px;
+}
+.indexTag .indexTagHd li:hover {
+    background: url("../images/pub.png") no-repeat scroll 0 -160px rgba(0, 0, 0, 0);
+    color: #259b24;
+}
+.indexTag .indexTagHd li.current span {
+    background: url("../images/pub.png") no-repeat scroll 0 -133px rgba(0, 0, 0, 0);
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+.linkMeinv {
+    background: url("../images/pub.png") no-repeat scroll -202px -60px rgba(0, 0, 0, 0);
+    bottom: 0;
+    display: block;
+    height: 28px;
+    position: absolute;
+    right: 0;
+    width: 128px;
+}
+.indexTag .indexTagItem {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #fff;
+    border-color: -moz-use-text-color #e5e5e5 #e5e5e5;
+    border-image: none;
+    border-right: 1px solid #e5e5e5;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    display: none;
+}
+.indexTag .indexTagItem ul {
+    padding: 10px 0 10px 13px;
+}
+.indexTag .indexTagItem li {
+    display: inline;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 4px;
+    overflow: hidden;
+    width: 63px;
+}
+.indexTag .indexTagItem li a {
+    display: block;
+    height: 24px;
+    width: 100%;
+}
+.indexTag .indexTagItem_zhuanji li {
+    width: 113px;
+}
+.indexTag .jiukuJian ul {
+    display: inline;
+    float: left;
+    margin-left: 15px;
+    padding: 10px 0;
+    width: 121px;
+}
+.indexTag .jiukuJian ul li {
+    display: block;
+    margin: 0;
+    text-align: left;
+    width: 121px;
+}
+.indexTag .jiukuJian ul li .num {
+    background: none repeat scroll 0 0 #aaa;
+    border-radius: 3px;
+    color: #fff;
+    float: left;
+    font-family: "Source Sans Pro","Helvetica neue",helvetica,Arial;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    margin: 5px 0 0;
+    overflow: hidden;
+    text-align: center;
+    width: 16px;
+}
+.indexTag .jiukuJian ul li .numTop {
+    background: none repeat scroll 0 0 #5ab438;
+}
+.indexTag .jiukuJian ul li a {
+    display: inline;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 5px;
+    overflow: hidden;
+    width: 100px;
+}
+.indexTag .jiukuJian ul li a i.tuiNew {
+    background: url("../images/pub.png") no-repeat scroll -330px -60px rgba(0, 0, 0, 0);
+    display: inline-block;
+    font-size: 0;
+    height: 9px;
+    line-height: 0;
+    margin-left: 5px;
+    overflow: hidden;
+    width: 23px;
+}
+.indexTag .jiukuJian ul li a i.tuiJian {
+    background: url("../images/pub.png") no-repeat scroll -330px -69px rgba(0, 0, 0, 0);
+    display: inline-block;
+    font-size: 0;
+    height: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    overflow: hidden;
+    width: 17px;
+}
+.indexTag .jiukuJian ul li a:hover {
+    color: #259b24;
+}
+.Mbox-hd {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.Mbox-tit {
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-indent: -9999em;
+    width: 105px;
+}
+.Mbox-more {
+    background: url("../images/pub.png") no-repeat scroll -185px -92px rgba(0, 0, 0, 0);
+    display: inline;
+    float: left;
+    font-size: 0;
+    height: 14px;
+    line-height: 0;
+    margin: 12px 0 0 3px;
+    overflow: hidden;
+    text-indent: -9999em;
+    width: 34px;
+}
+.Mbox-btn {
+    bottom: 2px;
+    display: block;
+    height: 26px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 123px;
+}
+.Mbox-play {
+    background: url("../images/pub.png") no-repeat scroll -90px -107px rgba(0, 0, 0, 0);
+    color: #666;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 26px;
+    line-height: 24px;
+    overflow: hidden;
+    text-indent: 24px;
+    width: 88px;
+}
+.Mbox-add {
+    background: url("../images/pub.png") no-repeat scroll -179px -107px rgba(0, 0, 0, 0);
+    display: inline;
+    float: left;
+    font-size: 14px;
+    height: 26px;
+    line-height: 24px;
+    margin-left: 5px;
+    overflow: hidden;
+    text-indent: 9999em;
+    width: 30px;
+}
+.Mbox-play:hover {
+    background: url("../images/pub.png") no-repeat scroll -90px -134px rgba(0, 0, 0, 0);
+    color: #fff;
+    text-decoration: none;
+}
+.Mbox-add:hover {
+    background: url("../images/pub.png") no-repeat scroll -179px -134px rgba(0, 0, 0, 0);
+}
+.musicList {
+    overflow: hidden;
+}
+.musicList li {
+    border-bottom: 1px solid #fff;
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+    width: 100%;
+}
+.musicList li .checkBox {
+    display: inline;
+    float: left;
+    margin: 12px 5px 0 0;
+}
+.musicList .num {
+    border-radius: 2px;
+    color: #999;
+    display: block;
+    float: left;
+    font-family: "Helvetica neue",helvetica,Arial;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    margin: 9px 0 0;
+    text-align: center;
+    width: 18px;
+}
+.musicList .songName {
+    display: inline;
+    float: left;
+    font-size: 14px;
+    margin-left: 10px;
+    width: 160px;
+}
+.musicList .singerName {
+    color: #999;
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    width: 60px;
+}
+.musicList .singerNameWrap {
+    display: inline;
+    float: left;
+    font-size: 14px;
+    margin-left: 10px;
+    width: 160px;
+}
+.musicList .mvIcon {
+    background: url("../images/pub.png") no-repeat scroll -430px -62px rgba(0, 0, 0, 0);
+    color: #999;
+    display: inline;
+    float: left;
+    height: 13px;
+    margin-left: 5px;
+    margin-top: 12px;
+    width: 17px;
+}
+.musicList li.top3 .num {
+    background: none repeat scroll 0 0 #259b24;
+    color: #fff;
+}
+.musicList li.top3 .songName {
+    color: #259b24;
+}
+.musicList li.top3 .singerName {
+    color: #666;
+}
+.musicList li:hover {
+    border-bottom: 1px solid #d5d5d5;
+}
+.musicList .songName:hover, .musicList .singerName:hover, .musicList li.top3 .singerName:hover {
+    color: #259b24;
+    text-decoration: none;
+}
+.musicList li.top3 .songName:hover {
+    color: #188817;
+}
+.musicList li .itemCao {
+    float: right;
+    height: 18px;
+    margin-top: 8px;
+    overflow: hidden;
+    width: 18px;
+}
+.musicList li .itemCao a {
+    display: block;
+    float: left;
+    height: 18px;
+    text-indent: -9999em;
+    width: 18px;
+}
+.musicList li .itemCao .itemAdd {
+    background: url("../images/pub.png") no-repeat scroll -211px -107px rgba(0, 0, 0, 0);
+}
+.musicList li .itemCao .itemAdd:hover {
+    background: url("../images/pub.png") no-repeat scroll -211px -126px rgba(0, 0, 0, 0);
+}
+.tuijian {
+    margin-bottom: 10px;
+}
+.newBox {
+    border-right: 1px solid #dedede;
+    float: left;
+    padding-right: 19px;
+    width: 620px;
+}
+.newBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.newBox .clickTab-hd {
+    display: inline;
+    float: left;
+    height: 24px;
+    margin: 3px 0 0 10px;
+    overflow: hidden;
+    width: 164px;
+}
+.newBox .clickTab-hd li {
+    background: none repeat scroll 0 0 #f0f0f0;
+    color: #666;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    width: 82px;
+}
+.newBox .clickTab-hd li.current {
+    background: none repeat scroll 0 0 #259b24;
+    color: #fff;
+}
+.newBox .upDate {
+    color: #999;
+    display: inline;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 20px;
+}
+.newBox .Mbox-bd {
+    padding-top: 5px;
+}
+.newBox .music2_L {
+    border-right: 1px dashed #ddd;
+    float: left;
+    padding-right: 20px;
+    width: 258px;
+}
+.newBox .music2_R {
+    float: right;
+    width: 313px;
+}
+.newBox .newBoxItem {
+    display: none;
+}
+.newBox .musicList .songName {
+    margin-left: 0;
+    width: auto;
+}
+.gedanBox {
+    float: right;
+    width: 300px;
+}
+.gedanBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -50px rgba(0, 0, 0, 0);
+}
+.gedanHot {
+    height: 100px;
+    margin: 12px 0 0;
+    overflow: hidden;
+    width: 300px;
+}
+.gedanList {
+    padding: 15px 0 0;
+}
+.gedanList li {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 6px 0;
+    width: 150px;
+}
+.gedanList li a {
+    display: block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.gedanList li a i {
+    display: block;
+    float: left;
+    height: 16px;
+    margin: 3px 6px 0 0;
+    width: 16px;
+}
+.gedanList li.gedanLei1 a i {
+    background: url("../images/pub.png") no-repeat scroll -220px -90px rgba(0, 0, 0, 0);
+}
+.gedanList li.gedanLei2 a i {
+    background: url("../images/pub.png") no-repeat scroll -238px -90px rgba(0, 0, 0, 0);
+}
+.gedanList li.gedanLei1 a:hover i {
+    background: url("../images/pub.png") no-repeat scroll -257px -90px rgba(0, 0, 0, 0);
+}
+.gedanList li.gedanLei2 a:hover i {
+    background: url("../images/pub.png") no-repeat scroll -275px -90px rgba(0, 0, 0, 0);
+}
+.gedanList li a:hover i {
+    background: url("../images/pub.png") no-repeat scroll -60px -79px rgba(0, 0, 0, 0);
+}
+.gedanList li a span {
+    line-height: 20px;
+}
+#hotBanner {
+    width: 300px;
+}
+.hot-event {
+    padding: 100px 0 0;
+    position: relative;
+}
+.hot-event .switch-tab {
+    bottom: 10px;
+    left: 50%;
+    margin-left: -30px;
+    position: absolute;
+    text-align: center;
+    width: 65px;
+    z-index: 99;
+}
+.hot-event .switch-tab a, .hot-event .switch-tab .current {
+    background: none repeat scroll 0 0 #000;
+    border-radius: 4px;
+    display: inline;
+    float: left;
+    font-size: 0;
+    height: 8px;
+    line-height: 0;
+    margin: 0 2px;
+    opacity: 0.4;
+    overflow: hidden;
+    width: 8px;
+}
+.hot-event .switch-tab .current {
+    background: none repeat scroll 0 0 #fff;
+    opacity: 1;
+}
+.hot-event .switch-nav a {
+    display: block;
+    height: 24px;
+    opacity: 0.4;
+    position: absolute;
+    top: 35px;
+    width: 24px;
+    z-index: 99;
+}
+.hot-event .switch-nav a:hover {
+    opacity: 1;
+}
+.hot-event .switch-nav .prev {
+    background: url("../images/bannerPage.png") no-repeat scroll 0 -24px rgba(0, 0, 0, 0);
+    left: 5px;
+}
+.hot-event .switch-nav .next {
+    background: url("../images/bannerPage.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    right: 5px;
+}
+.hot-event .event-item {
+    display: none;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    z-index: 1;
+}
+.hot-event .event-item .banner {
+    display: block;
+}
+.hot-event .event-item img {
+    display: block;
+    height: 100px;
+    width: 300px;
+}
+.top120 {
+    margin-bottom: 20px;
+}
+.topBox .Mbox-hd {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 6px;
+}
+.topBox .Mbox-bd {
+    overflow: hidden;
+    padding-top: 5px;
+    width: 960px;
+}
+.topBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -99px rgba(0, 0, 0, 0);
+    width: 215px;
+}
+.topBox .musicList {
+    overflow: hidden;
+    width: 1010px;
+}
+.topBox .musicList li {
+    display: inline;
+    float: left;
+    margin-right: 44px;
+    width: 290px;
+}
+.topBox .musicList li .num {
+    background: none repeat scroll 0 0 #fff;
+    color: #bbb;
+    text-align: left;
+    width: 24px;
+}
+.topBox .musicList li .songName {
+    margin-left: 0;
+    width: 150px;
+}
+.topBox .musicList li .singerName {
+    text-align: right;
+}
+.topBox .musicList li.hotRed .songName {
+    color: #e30b0b;
+}
+.topBox .musicList li.hotBlue .songName {
+    color: #0b4de3;
+}
+.jingdian {
+    margin-bottom: 20px;
+}
+.jingdianBox {
+    border-right: 1px solid #dedede;
+    float: left;
+    padding-right: 19px;
+    width: 620px;
+}
+.jingdianBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -150px rgba(0, 0, 0, 0);
+}
+.jingdianBox .Mbox-bd {
+    padding-top: 5px;
+}
+.jingdianBox .music2_L {
+    border-right: 1px dashed #ddd;
+    float: left;
+    padding-right: 20px;
+    width: 290px;
+}
+.jingdianBox .music2_R {
+    float: right;
+    width: 290px;
+}
+.jingdianBox .itemLink {
+    display: inline;
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px 0 0 3px;
+}
+.jingdianBox .itemLink a {
+    padding: 0 5px;
+}
+.geshouBox {
+    float: right;
+    width: 300px;
+}
+.geshouBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -199px rgba(0, 0, 0, 0);
+}
+.geshouBox .Mbox-bd {
+    overflow: hidden;
+    width: 300px;
+}
+.geshouHot {
+    overflow: hidden;
+    padding: 10px 0 0;
+    width: 320px;
+}
+.geshouHot li {
+    display: inline;
+    float: left;
+    margin: 0 20px 0 0;
+    width: 60px;
+}
+.geshouHot li a img {
+    display: block;
+    height: 60px;
+    width: 60px;
+}
+.geshouHot li a span {
+    display: block;
+    font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 4px;
+    overflow: hidden;
+    text-align: center;
+    width: 60px;
+}
+.geshouLine {
+    border-top: 1px dashed #ccc;
+    margin: 10px 0 0;
+}
+.geshouList {
+    overflow: hidden;
+    padding: 10px 0 0;
+    width: 320px;
+}
+.geshouList li {
+    display: inline;
+    float: left;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    width: 60px;
+}
+.geshouLei {
+    overflow: hidden;
+    width: 320px;
+}
+.geshouLei li {
+    display: inline;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 10px 0 0;
+    width: 96px;
+}
+.geshouLei li.geshouzh {
+    width: 88px;
+}
+.geshouLei li a {
+    background: none repeat scroll 0 0 #eeeeee;
+    border-radius: 3px;
+    display: block;
+    font-size: 14px;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+.geshouLei li a:hover {
+    background: none repeat scroll 0 0 #e3e3e3;
+    text-decoration: none;
+}
+.rank {
+    margin-bottom: 20px;
+}
+.rank .Mbox-bd {
+    padding-top: 5px;
+}
+.rank .yingwenBox {
+    border-right: 1px solid #ddd;
+    float: left;
+    padding-right: 20px;
+    width: 290px;
+}
+.rank .ergeBox {
+    border-right: 1px solid #ddd;
+    float: left;
+    padding-right: 20px;
+    width: 290px;
+}
+.rank .fzlBox {
+    border-right: 1px solid #ddd;
+    float: left;
+    padding: 0 18px 0 20px;
+    width: 290px;
+}
+.yingwenBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -249px rgba(0, 0, 0, 0);
+}
+.ergeBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -300px rgba(0, 0, 0, 0);
+}
+.fzlBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -350px rgba(0, 0, 0, 0);
+    width: 80px;
+}
+.rank .djBox {
+    border-right: 1px solid #ddd;
+    float: left;
+    padding: 0 18px 0 20px;
+    width: 290px;
+}
+.rank .qingBox {
+    float: right;
+    width: 300px;
+}
+.rank .gcwBox {
+    float: right;
+    width: 300px;
+}
+.djBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -400px rgba(0, 0, 0, 0);
+    width: 90px;
+}
+.qingBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -450px rgba(0, 0, 0, 0);
+    width: 80px;
+}
+.gcwBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -500px rgba(0, 0, 0, 0);
+    width: 80px;
+}
+.gcwBox .musicList .songName {
+    margin-left: 0;
+    width: auto;
+}
+.ruku {
+    margin-bottom: 20px;
+}
+.rukuBox {
+    border-right: 1px solid #dedede;
+    float: left;
+    width: 640px;
+}
+.rukuBox .Mbox-bd {
+    padding-top: 5px;
+}
+.loveBox {
+    float: right;
+    width: 300px;
+}
+.loveBox .Mbox-bd {
+    padding-top: 5px;
+}
+.rukuBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -550px rgba(0, 0, 0, 0);
+    width: 158px;
+}
+.loveBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -600px rgba(0, 0, 0, 0);
+    width: 228px;
+}
+.rukuList {
+    overflow: hidden;
+    width: 100%;
+}
+.rukuList li {
+    display: inline;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 22px 0 0;
+    overflow: hidden;
+    width: 190px;
+}
+.rukuList li .songNum {
+    color: #999;
+    font-family: "Helvetica neue",helvetica,Arial;
+    font-size: 12px;
+    padding-right: 5px;
+}
+.rukuList li .songName {
+    font-size: 12px;
+}
+.rukuList li .singerName {
+    color: #999;
+    font-size: 12px;
+}
+.rukuList li .singerName:hover {
+    color: #55a642;
+}
+.rukuList li .shortLine {
+    color: #999;
+    padding: 0 5px;
+}
+.loveList li {
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    width: 50%;
+}
+.fuhao {
+    border-top: 1px dashed #ccc;
+    margin: 5px 0 0;
+    padding-top: 5px;
+}
+.mv {
+    margin-bottom: 10px;
+}
+.mvBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -748px rgba(0, 0, 0, 0);
+    width: 102px;
+}
+.mvList {
+    padding-bottom: 15px;
+}
+.mvList li {
+    display: inline;
+    float: left;
+    margin: 15px 15px 0 0;
+    width: 180px;
+}
+.mvList li .maskBox {
+    display: block;
+    height: 101px;
+    overflow: hidden;
+    position: relative;
+    width: 180px;
+}
+.mvList li .maskBox .t-i img {
+    background: url("../images/loading.gif") no-repeat scroll center center rgba(0, 0, 0, 0);
+    display: block;
+    height: 101px;
+    width: 180px;
+}
+.mvList li .maskBox .maskDis {
+    display: none;
+    z-index: 99;
+}
+.mvList li .maskBox .maskBg {
+    background: none repeat scroll 0 0 #000;
+    display: block;
+    height: 101px;
+    left: 0;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    width: 180px;
+}
+.mvList li .maskBox .maskBtn {
+    background: url("../images/play.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 27px;
+    left: 50%;
+    margin-left: -14px;
+    margin-top: -14px;
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    z-index: 99;
+}
+.mvList li .t-t {
+    display: block;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 3px;
+    overflow: hidden;
+    text-align: center;
+}
+.mvList li .i-t {
+    color: #999;
+    display: block;
+    line-height: 18px;
+}
+.mvList li .i-t p {
+    height: 18px;
+    overflow: hidden;
+}
+.mvList li .i-t .mvSinger {
+    color: #666;
+    text-align: center;
+}
+.friendLink {
+    margin-bottom: 10px;
+}
+.linkBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -650px rgba(0, 0, 0, 0);
+    width: 75px;
+}
+.linkBox .Mbox-bd {
+    border: 1px solid #e5e5e5;
+}
+.linkBox ul {
+    padding: 6px 8px;
+}
+.linkBox li {
+    display: inline;
+    float: left;
+    line-height: 20px;
+    margin: 2px 5px;
+    white-space: nowrap;
+}
+.copyRight {
+    margin-bottom: 10px;
+}
+.copyRightBox .Mbox-tit {
+    background: url("../images/indexTit.png") no-repeat scroll 0 -700px rgba(0, 0, 0, 0);
+    width: 158px;
+}
+.copyRightBox .Mbox-bd {
+    border: 1px solid #e5e5e5;
+}
+.copyRightBox p {
+    padding: 10px;
+}
